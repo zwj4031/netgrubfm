@@ -1,9 +1,9 @@
 [简体中文](https://a1ive.github.io/grub2-filemanager/) 
 
-# grub2-filemanager 
+# grub2-filemanager 网启版
 ![](https://img.shields.io/github/license/a1ive/grub2-filemanager.svg?style=flat) ![](https://img.shields.io/github/downloads/a1ive/grub2-filemanager/total.svg?style=flat) ![](https://img.shields.io/github/release/a1ive/grub2-filemanager.svg?style=flat) [![Crowdin](https://badges.crowdin.net/grub2-filemanager/localized.svg)](https://crowdin.com/project/grub2-filemanager)
 
-## Preview
+## Preview [以下为本地版功能]
 
 ![preview.png](https://github.com/a1ive/grub2-filemanager/raw/gh-pages/preview.png)
 
