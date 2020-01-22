@@ -1,0 +1,44 @@
+name: release
+
+on: 
+  push:
+    branches: 
+      - master
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@master
+        with:
+          ref: master
+
+      - name: make
+        run: |
+          rm -rf ./netgrubfm/
+          mkdir -p ./netgrubfm/
+          echo "y" | sudo apt-get install gettext
+          echo "y" | sudo apt-get install mkisofs
+          echo "y" | sudo apt-get install genisoimage
+          sudo mkdir tftpboot
+          echo "1" | sudo sh ./buildnet.sh  
+      - name: grubfm for net
+        run: |    
+          ls tftpboot
+          ls netgrubfm
+          cp -r tftpboot ./netgrubfm/  
+          
+      - name: makegz
+        run: |
+          sudo sh ./releasenet.sh
+   
+      - name: upload
+        uses: marvinpinto/action-automatic-releases@latest
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          automatic_release_tag: "Latest"
+          prerelease: false
+          title: "Development Build"
+          files: ../../netgrubfm.tar.gz
+        

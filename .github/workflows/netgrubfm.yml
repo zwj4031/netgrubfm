@@ -1,0 +1,47 @@
+
+
+
+name: netgrubfm
+
+on:
+  push:
+    branches: 
+      - master
+  # schedule:
+  #   - cron: 0 20 * * *
+  # release:
+  #   types: [published]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@master
+        with:
+          ref: master
+
+      - name: make
+        run: |
+          rm -rf ./netgrubfm/
+          mkdir -p ./netgrubfm/
+          echo "y" | sudo apt-get install gettext
+          echo "y" | sudo apt-get install mkisofs
+          echo "y" | sudo apt-get install genisoimage
+          sudo mkdir tftpboot
+          echo "1" | sudo sh ./buildnet.sh  
+      - name: grubfm for net
+        run: |    
+          ls tftpboot
+          ls netgrubfm
+          cp -r tftpboot ./netgrubfm/  
+          
+                 
+      - name: Upload netgrubfm
+        uses: actions/upload-artifact@master
+        with:
+          name: grubfm for net
+          path: ./netgrubfm/
+
+
