@@ -1,0 +1,10 @@
+iat_keyboard: at_keyboard
+iserial: serial
+iserial_*: serial
+iusb_gamepad: usb_gamepad
+oaudio: morse
+ocbmemc: cbmemc
+omda_text: mda_text
+oserial: serial
+oserial_*: serial
+ospkmodem: spkmodem
