@@ -1,5 +1,6 @@
 [type]
 icon = img
+boot = net/vhd.sh
 
 [0]
 menu = vhd/ntboot.sh

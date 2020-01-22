@@ -170,9 +170,11 @@ grub-mkimage -d ./grub/i386-pc -c ./arch/legacy-pxe/httpfm.cfg -o httpfm -O i386
 mv pxefm ./tftpboot/pxefm.0  
 mv httpfm ./tftpboot/httpfm.0 
 cp ./arch/legacy-pxe/g4ddisk ./tftpboot
-cp list.bat ./tftpboot
+cp ./arch/legacy-pxe/list.bat ./tftpboot
 mkdir ./tftpboot/app
 mkdir ./tftpboot/app/config
+mkdir ./tftpboot/app/leagacy
+cp ./arch/legacy/grub.exe ./tftpboot/app/leagacy
 cp ./arch/x64-pxe/loadefi ./tftpboot/app/config
 cp ./arch/x64-pxe/loadfmx64.efi ./tftpboot/loadfmx64.efi.0
 cp ./grubfmx64.efi ./tftpboot
