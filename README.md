@@ -1,9 +1,23 @@
 [简体中文](https://a1ive.github.io/grub2-filemanager/) 
 
 # grub2-filemanager 网启版
+# uefi下网启文件为loadfmx64.efi.0
+# bios下网启文件为pxefm.0
+# 可以不用借助dir.txt(和g4d的dir.txt通用)直接列表并生成菜单项！(tinypxe直接支持，其它web服务器不能存在index.html且支持目录浏览)无法退回网启菜单请按F5!
+# efi和bios下均支持直接启动网络上的wim   iso类型的pe
+# 目前还没深度折腾，启动网络上的文件类型目前很有限
+# grubfmx64.efi支持本地、网络两用，本地使用也可以按f4开启网络并按f5调出网启菜单
+#bios 下  wim  ipxe原味wimboot
+#              img  memdisk
+#              iso  memdisk+sanboot(ipxe)
+
+#efi  下  wim  ipxe原味wimboot
+##             img map --mem
+##             iso map --mem
 ![](https://img.shields.io/github/license/a1ive/grub2-filemanager.svg?style=flat) ![](https://img.shields.io/github/downloads/a1ive/grub2-filemanager/total.svg?style=flat) ![](https://img.shields.io/github/release/a1ive/grub2-filemanager.svg?style=flat) [![Crowdin](https://badges.crowdin.net/grub2-filemanager/localized.svg)](https://crowdin.com/project/grub2-filemanager)
 
 ## Preview [以下为本地版功能]
+
 
 ![preview.png](https://github.com/a1ive/grub2-filemanager/raw/gh-pages/preview.png)
 
