@@ -7,13 +7,13 @@
 # efi和bios下均支持直接启动网络上的wim   iso类型的pe
 # 目前还没深度折腾，启动网络上的文件类型目前很有限
 # grubfmx64.efi支持本地、网络两用，本地使用也可以按f4开启网络并按f5调出网启菜单
-#bios 下  wim  ipxe原味wimboot
-#              img  memdisk
-#              iso  memdisk+sanboot(ipxe)
+# bios 下  wim  ipxe原味wimboot
+#               img  memdisk
+#               iso  memdisk+sanboot(ipxe)
 
-#efi  下  wim  ipxe原味wimboot
-##             img map --mem
-##             iso map --mem
+# efi  下  wim  ipxe原味wimboot
+#               img map --mem
+#               iso map --mem
 ![](https://img.shields.io/github/license/a1ive/grub2-filemanager.svg?style=flat) ![](https://img.shields.io/github/downloads/a1ive/grub2-filemanager/total.svg?style=flat) ![](https://img.shields.io/github/release/a1ive/grub2-filemanager.svg?style=flat) [![Crowdin](https://badges.crowdin.net/grub2-filemanager/localized.svg)](https://crowdin.com/project/grub2-filemanager)
 
 ## Preview [以下为本地版功能]
