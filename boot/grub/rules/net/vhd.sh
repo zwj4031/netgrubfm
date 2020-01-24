@@ -17,7 +17,7 @@ export g4d_cmd_siso="pxe detect;map --mem (rd)+1 (hd0);map (hd0) (hd1);map --hoo
 menuentry $"启动Ramos (测试) " --class net {
   terminal_output console;
   enable_progress_indicator=1;
-set grldrurl=http://${net_default_server}/app/leagacy/grldr;
+set grldrurl=http://${net_default_server}/app/legacy/grldr;
 linux16 $prefix/ipxe.lkrn dhcp \&\& isset \$\{proxydhcp/filename\} \&\& set proxydhcp/filename $grubfm_path \&\& chain $grldrurl \|\| isset \$\{net0/filename\} $grubfm_file \&\& set net0/filename $grubfm_path \&\& chain $grldrurl;
   
 }
