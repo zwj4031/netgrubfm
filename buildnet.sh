@@ -175,7 +175,7 @@ mkdir ./tftpboot/app
 mkdir ./tftpboot/app/config
 mkdir ./tftpboot/app/legacy
 cp ./arch/legacy/grub.exe ./tftpboot/app/legacy
-cp ./arch/legacy/grldr ./tftpboot/app/legacy
+cp ./arch/legacy-pxe/grldr ./tftpboot/app/legacy
 cp ./arch/legacy-pxe/grub.bat ./tftpboot/app/legacy
 cp ./arch/x64-pxe/loadefi ./tftpboot/app/config
 cp ./arch/x64-pxe/loadfmx64.efi ./tftpboot/loadfmx64.efi.0
