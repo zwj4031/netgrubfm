@@ -39,13 +39,13 @@ menuentry $"启动Ramos (grub2读 map --mem --top) " --class net {
 menuentry $"启动Ramos (ipxe读 map --mem) " --class net {
   terminal_output console;
   enable_progress_indicator=1;
-  linux16 $prefix/ipxe.lkrn dhcp \&\& kernel http://${net_default_server}/app/leagacy/grub.exe --config-file=$g4d_cmd \&\& initrd http://${net_default_server}$grubfm_path \&\& boot
+  linux16 $prefix/ipxe.lkrn dhcp \&\& kernel http://${net_default_server}/app/legacy/grub.exe --config-file=$g4d_cmd \&\& initrd http://${net_default_server}$grubfm_path \&\& boot
   
 }
 menuentry $"启动Ramos (ipxe读 map --mem --top) " --class net {
   terminal_output console;
   enable_progress_indicator=1;
-  linux16 $prefix/ipxe.lkrn dhcp \&\& kernel http://${net_default_server}/app/leagacy/grub.exe --config-file=$g4d_cmd_top \&\& initrd http://${net_default_server}$grubfm_path \&\& boot
+  linux16 $prefix/ipxe.lkrn dhcp \&\& kernel http://${net_default_server}/app/legacy/grub.exe --config-file=$g4d_cmd_top \&\& initrd http://${net_default_server}$grubfm_path \&\& boot
   
 }
 
