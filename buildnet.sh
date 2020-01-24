@@ -173,10 +173,10 @@ cp ./arch/legacy-pxe/g4ddisk ./tftpboot
 cp ./arch/legacy-pxe/list.bat ./tftpboot
 mkdir ./tftpboot/app
 mkdir ./tftpboot/app/config
-mkdir ./tftpboot/app/leagacy
-cp ./arch/legacy/grub.exe ./tftpboot/app/leagacy
-cp ./arch/legacy/grldr ./tftpboot/app/leagacy
-cp ./arch/legacy/grub.bat ./tftpboot/app/leagacy
+mkdir ./tftpboot/app/legacy
+cp ./arch/legacy/grub.exe ./tftpboot/app/legacy
+cp ./arch/legacy/grldr ./tftpboot/app/legacy
+cp ./arch/legacy-pxe/grub.bat ./tftpboot/app/legacy
 cp ./arch/x64-pxe/loadefi ./tftpboot/app/config
 cp ./arch/x64-pxe/loadfmx64.efi ./tftpboot/loadfmx64.efi.0
 cp ./grubfmx64.efi ./tftpboot
