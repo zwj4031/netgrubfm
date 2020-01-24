@@ -34,14 +34,14 @@ menuentry $"使用g4d方式(grub2读)" --class net {
 menuentry $"使用g4d方式(ipxe读) " --class net {
    terminal_output console;
    enable_progress_indicator=1;
-   linux16 $prefix/ipxe.lkrn dhcp \&\& kernel http://${net_default_server}/app/leagacy/grub.exe --config-file=$g4d_cmd \&\& initrd http://${net_default_server}$grubfm_path \&\& boot
+   linux16 $prefix/ipxe.lkrn dhcp \&\& kernel http://${net_default_server}/app/lagacy/grub.exe --config-file=$g4d_cmd \&\& initrd http://${net_default_server}$grubfm_path \&\& boot
   
 }
 #menuentry $"使用g4d方式(ipxe转g4d测试) " --class net {
 #   terminal_output console;
 #   enable_progress_indicator=1;
 #   linux $prefix/grub.exe --config-file=$g4d_cmd_pxe;
-#  linux16 $prefix/ipxe.lkrn dhcp \&\& kernel tftp://${net_default_server}/app/leagacy/grub.exe keeppxe --config-file=$g4d_cmd_pxe \&\& boot
+#  linux16 $prefix/ipxe.lkrn dhcp \&\& kernel tftp://${net_default_server}/app/legacy/grub.exe keeppxe --config-file=$g4d_cmd_pxe \&\& boot
 #}
 
 
