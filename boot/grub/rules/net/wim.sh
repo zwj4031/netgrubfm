@@ -3,22 +3,20 @@ terminal_output console;
 loopback wimboot ${prefix}/wimboot.gz;
 if [ "$grub_platform" = "efi" ];
 then
-   #export grub_cmdline=;
    set enable_progress_indicator=1;
   echo                 ;
-   echo                 ;
-    echo                 ;
-	 echo                 ;
-	  echo                 ;
-	   echo                 ;
-	    echo                 ;
-		 echo                 ;
-		  echo                 ;
-		   echo                 ;
-		    echo                 ;
-			 echo                 ;
-			  echo                 ;
-			  
+  echo                 ;
+  echo                 ;
+  echo                 ;
+  echo                 ;
+  echo                 ;
+  echo                 ;
+  echo                 ;
+  echo                 ;
+  echo                 ;
+  echo                 ;
+  echo                 ;
+  echo                 ;
   linuxefi (wimboot)/wimboot;
   initrdefi newc:bootmgfw.efi:(wimboot)/bootmgfw.efi \
             newc:bcd:(wimboot)/bcd \
