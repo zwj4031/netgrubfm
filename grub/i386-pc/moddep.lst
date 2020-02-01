@@ -83,12 +83,10 @@ file: macho elf extcmd offsetio
 usbserial_usbdebug: serial usb usbserial_common
 video_colors:
 morse:
-peinfo: extcmd
 hashsum: crypto extcmd normal
 usb: pci
 halt: extcmd acpi
 gdb: serial backtrace
-imgwrite: disk
 gfxterm_background: video_colors bitmap_scale gfxterm extcmd video bitmap
 search_fs_uuid:
 gcry_dsa: pgp mpi
@@ -142,8 +140,8 @@ biosdisk:
 lsapm:
 gcry_sha512: crypto
 password: crypto normal
-fshelp:
 efiemu: gcry_crc crypto smbios cpuid acpi
+fshelp:
 sleep_test: functional_test datetime
 iorw: extcmd
 xnu: macho bitmap_scale random verifiers extcmd video bitmap boot efiemu relocator mmap
@@ -172,8 +170,8 @@ gcry_crc: crypto
 png: bufio bitmap
 json:
 jpeg: bufio bitmap
-macbless: disk
 dd: disk extcmd
+macbless: disk
 div_test: functional_test div
 regexp: extcmd normal
 parttool: normal

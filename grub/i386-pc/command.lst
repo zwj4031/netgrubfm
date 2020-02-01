@@ -54,7 +54,6 @@
 *ntversion: grubfm
 *partnew: partnew
 *pcidump: pcidump
-*peinfo: peinfo
 *plan9: plan9
 *pop_env: normal
 *probe: probe
@@ -144,7 +143,6 @@ gptrepair: gptrepair
 gptsync: gptsync
 help: minicmd
 hexdump_random: random
-imgwrite: imgwrite
 increment: increment
 initrd16: linux16
 initrd: linux

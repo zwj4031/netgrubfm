@@ -86,12 +86,10 @@ file: macho elf extcmd offsetio
 usbserial_usbdebug: serial usb usbserial_common
 video_colors:
 morse:
-peinfo: extcmd
 hashsum: crypto extcmd normal
 usb:
 halt: acpi
 gdb: serial backtrace
-imgwrite: disk
 gfxterm_background: video_colors bitmap_scale gfxterm extcmd video bitmap
 search_fs_uuid:
 gcry_dsa: pgp mpi
@@ -174,8 +172,8 @@ efiload: extcmd
 png: bufio bitmap
 json:
 jpeg: bufio bitmap
-macbless: disk
 dd: disk extcmd
+macbless: disk
 div_test: functional_test div
 regexp: extcmd normal
 parttool: normal

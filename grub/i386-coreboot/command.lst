@@ -42,7 +42,6 @@
 *menuentry: normal
 *partnew: partnew
 *pcidump: pcidump
-*peinfo: peinfo
 *pop_env: normal
 *probe: probe
 *rand: uuid
@@ -124,7 +123,6 @@ gptsync: gptsync
 halt: halt
 help: minicmd
 hexdump_random: random
-imgwrite: imgwrite
 increment: increment
 initrd16: linux16
 initrd: linux

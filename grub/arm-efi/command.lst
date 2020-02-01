@@ -48,7 +48,6 @@
 *moksbset: sbpolicy
 *ntversion: grubfm
 *partnew: partnew
-*peinfo: peinfo
 *pop_env: normal
 *probe: probe
 *rand: uuid
@@ -116,7 +115,6 @@ gptrepair: gptrepair
 gptsync: gptsync
 halt: halt
 help: minicmd
-imgwrite: imgwrite
 increment: increment
 initrd: linux
 linux: linux
