@@ -83,6 +83,7 @@ hashsum: crypto extcmd normal
 usb: pci
 halt: pci acpi
 gdb: serial backtrace
+stat: extcmd normal
 gfxterm_background: video_colors bitmap_scale extcmd bitmap
 search_fs_uuid:
 gcry_dsa: pgp mpi

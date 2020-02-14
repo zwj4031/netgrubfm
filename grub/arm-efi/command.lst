@@ -65,6 +65,7 @@
 *sha512sum: hashsum
 *sleep: sleep
 *smbios: smbios
+*stat: stat
 *strconv: conv
 *submenu: normal
 *submenu_exit: normal

@@ -69,6 +69,7 @@ function xml_list {
   # autounattend.xml
   if [ -f "(${grubfm_device})${grubfm_dir}"*.xml ];
   then
+    clear_menu;
     menuentry $"Install Windows without autounattend.xml" "${1}" --class nt6 {
       win_isoboot "${2}";
     }
@@ -79,6 +80,7 @@ function xml_list {
         win_isoboot "${2}" "${3}";
       }
     done;
+    source ${prefix}/global.sh;
   else
     win_isoboot "${1}";
   fi;
@@ -100,4 +102,5 @@ else
       xml_list "(loop)/x86/sources/boot.wim";
     }
   fi;
+  source ${prefix}/global.sh;
 fi;

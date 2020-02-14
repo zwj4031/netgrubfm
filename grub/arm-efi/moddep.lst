@@ -74,6 +74,7 @@ file: macho elf extcmd offsetio
 video_colors:
 hashsum: crypto extcmd normal
 halt:
+stat: extcmd normal
 gfxterm_background: video_colors bitmap_scale gfxterm extcmd video bitmap
 search_fs_uuid:
 gcry_dsa: pgp mpi
