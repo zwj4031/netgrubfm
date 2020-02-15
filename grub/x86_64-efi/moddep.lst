@@ -214,7 +214,7 @@ vhd: extcmd
 usbtest: usb
 relocator: mmap
 linuxefi: linux boot
-acpi: extcmd mmap
+acpi: extcmd video mmap
 tga: bufio bitmap
 reboot:
 serial: extcmd terminfo

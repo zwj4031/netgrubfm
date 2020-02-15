@@ -167,7 +167,7 @@ procfs: archelp
 boot:
 progress: normal
 kernel:
-acpi: extcmd mmap
+acpi: extcmd video mmap
 tga: bufio bitmap
 reboot:
 serial: extcmd terminfo
