@@ -1,0 +1,181 @@
+From 4d77e5e57cb5a0e0582ab3f3fec43fe6f59e442e Mon Sep 17 00:00:00 2001
+From: a1ive <ligenlive@gmail.com>
+Date: Wed, 19 Feb 2020 18:53:05 +0800
+Subject: [PATCH 7/7] disable theme if theme file not exist (#103)
+
+---
+ boot/grubfm/global.sh               | 5 ++++-
+ boot/grubfm/help.sh                 | 5 ++++-
+ boot/grubfm/osdetect.sh             | 5 ++++-
+ boot/grubfm/rules/cfg/grub2.sh      | 5 ++++-
+ boot/grubfm/rules/cfg/pxelinux.sh   | 5 ++++-
+ boot/grubfm/rules/cfg/syslinux.sh   | 5 ++++-
+ boot/grubfm/rules/generic/custom.sh | 5 ++++-
+ boot/grubfm/rules/generic/dummy.sh  | 5 ++++-
+ boot/grubfm/rules/generic/info.sh   | 5 ++++-
+ boot/grubfm/rules/iso/loop.sh       | 5 ++++-
+ boot/grubfm/rules/lst/grub.sh       | 5 ++++-
+ 11 files changed, 44 insertions(+), 11 deletions(-)
+
+diff --git a/boot/grubfm/global.sh b/boot/grubfm/global.sh
+index fb683e7..822f853 100644
+--- a/boot/grubfm/global.sh
++++ b/boot/grubfm/global.sh
+@@ -14,7 +14,10 @@
+ # You should have received a copy of the GNU General Public License
+ # along with Grub2-FileManager.  If not, see <http://www.gnu.org/licenses/>.
+ 
+-export theme=${theme_fm};
++if [ -f "${theme_fm}" ];
++then
++  export theme=${theme_fm};
++fi;
+ 
+ hiddenentry "---- HOTKEY MENU ----" {
+   echo;
+diff --git a/boot/grubfm/help.sh b/boot/grubfm/help.sh
+index 9cc9d6a..04ffe09 100644
+--- a/boot/grubfm/help.sh
++++ b/boot/grubfm/help.sh
+@@ -14,7 +14,10 @@
+ # You should have received a copy of the GNU General Public License
+ # along with Grub2-FileManager.  If not, see <http://www.gnu.org/licenses/>.
+ 
+-export theme=${theme_help};
++if [ -f "${theme_help}" ];
++then
++  export theme=${theme_help};
++fi;
+ 
+ videomode -c mode_current;
+ 
+diff --git a/boot/grubfm/osdetect.sh b/boot/grubfm/osdetect.sh
+index c909d95..3f2f4cc 100644
+--- a/boot/grubfm/osdetect.sh
++++ b/boot/grubfm/osdetect.sh
+@@ -81,7 +81,10 @@ do
+   if [ -f "(${device})/boot/grub/external_menu.cfg" ];
+   then
+     menuentry $"Load External Menu on (${device}) ${info}" "${device}" --class cfg {
+-      export theme=${theme_std};
++      if [ -f "${theme_std}" ];
++      then
++        export theme=${theme_std};
++      fi;
+       set root="${2}";
+       configfile (${root})/boot/grub/external_menu.cfg;
+     }
+diff --git a/boot/grubfm/rules/cfg/grub2.sh b/boot/grubfm/rules/cfg/grub2.sh
+index 5b86b38..f05cc56 100644
+--- a/boot/grubfm/rules/cfg/grub2.sh
++++ b/boot/grubfm/rules/cfg/grub2.sh
+@@ -1,5 +1,8 @@
+ source ${prefix}/func.sh;
+ 
+ set root=${grubfm_device};
+-export theme=${theme_std};
++if [ -f "${theme_std}" ];
++then
++  export theme=${theme_std};
++fi;
+ configfile "${grubfm_file}";
+diff --git a/boot/grubfm/rules/cfg/pxelinux.sh b/boot/grubfm/rules/cfg/pxelinux.sh
+index 272b7e3..eb34b9a 100644
+--- a/boot/grubfm/rules/cfg/pxelinux.sh
++++ b/boot/grubfm/rules/cfg/pxelinux.sh
+@@ -1,5 +1,8 @@
+ source ${prefix}/func.sh;
+ 
+ set root=${grubfm_device};
+-export theme=${theme_std};
++if [ -f "${theme_std}" ];
++then
++  export theme=${theme_std};
++fi;
+ syslinux_configfile -p "${grubfm_file}";
+diff --git a/boot/grubfm/rules/cfg/syslinux.sh b/boot/grubfm/rules/cfg/syslinux.sh
+index 7797a30..18e4068 100644
+--- a/boot/grubfm/rules/cfg/syslinux.sh
++++ b/boot/grubfm/rules/cfg/syslinux.sh
+@@ -1,5 +1,8 @@
+ source ${prefix}/func.sh;
+ 
+ set root=${grubfm_device};
+-export theme=${theme_std};
++if [ -f "${theme_std}" ];
++then
++  export theme=${theme_std};
++fi;
+ syslinux_configfile -s "${grubfm_file}";
+diff --git a/boot/grubfm/rules/generic/custom.sh b/boot/grubfm/rules/generic/custom.sh
+index 99ded9c..71376e2 100644
+--- a/boot/grubfm/rules/generic/custom.sh
++++ b/boot/grubfm/rules/generic/custom.sh
+@@ -1,2 +1,5 @@
+-export theme=${theme_std};
++if [ -f "${theme_std}" ];
++then
++  export theme=${theme_std};
++fi;
+ configfile "(${grubfm_device})${grubfm_dir}${grubfm_filename}.grubfm";
+diff --git a/boot/grubfm/rules/generic/dummy.sh b/boot/grubfm/rules/generic/dummy.sh
+index 2fce4e9..ab6b768 100644
+--- a/boot/grubfm/rules/generic/dummy.sh
++++ b/boot/grubfm/rules/generic/dummy.sh
+@@ -1,5 +1,8 @@
+ source ${prefix}/func.sh;
+-export theme=${theme_open};
++if [ -f "${theme_open}" ];
++then
++  export theme=${theme_open};
++fi;
+ set grubfm_test=1;
+ 
+ hiddenentry "[F1] HELP" --hotkey f1 {
+diff --git a/boot/grubfm/rules/generic/info.sh b/boot/grubfm/rules/generic/info.sh
+index d1a151f..5f7a20c 100644
+--- a/boot/grubfm/rules/generic/info.sh
++++ b/boot/grubfm/rules/generic/info.sh
+@@ -1,6 +1,9 @@
+ source ${prefix}/func.sh;
+ 
+-set theme=${theme_info};
++if [ -f "${theme_info}" ];
++then
++  export theme=${theme_info};
++fi;
+ 
+ stat -s size -z "${grubfm_file}";
+ stat -s info "${grubfm_file}";
+diff --git a/boot/grubfm/rules/iso/loop.sh b/boot/grubfm/rules/iso/loop.sh
+index 37161e3..cbb9df7 100644
+--- a/boot/grubfm/rules/iso/loop.sh
++++ b/boot/grubfm/rules/iso/loop.sh
+@@ -5,6 +5,9 @@ loopback loop "${grubfm_file}";
+ probe --set=rootuuid -u "(${grubfm_device})";
+ export iso_path="${grubfm_path}";
+ export rootuuid;
+-export theme=${theme_std};
++if [ -f "${theme_std}" ];
++then
++  export theme=${theme_std};
++fi;
+ set root=loop;
+ configfile /boot/grub/loopback.cfg;
+diff --git a/boot/grubfm/rules/lst/grub.sh b/boot/grubfm/rules/lst/grub.sh
+index 7ef9a97..7f31482 100644
+--- a/boot/grubfm/rules/lst/grub.sh
++++ b/boot/grubfm/rules/lst/grub.sh
+@@ -1,5 +1,8 @@
+ source ${prefix}/func.sh;
+ 
+ set root=${grubfm_device};
+-export theme=${theme_std};
++if [ -f "${theme_std}" ];
++then
++  export theme=${theme_std};
++fi;
+ legacy_configfile "${grubfm_file}";
+-- 
+2.7.4
+
