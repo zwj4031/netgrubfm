@@ -135,6 +135,7 @@ macppcbless: macbless
 mactelbless: macbless
 mkdir: fatfs
 mount: fatfs
+mv: fatfs
 net_add_addr: net
 net_add_dns: net
 net_add_route: net
@@ -168,6 +169,7 @@ reboot: reboot
 rename: fatfs
 reset: reboot
 return: normal
+rm: fatfs
 rmmod: minicmd
 search.disk_uuid: search_disk_uuid
 search.file: search_fs_file
@@ -183,6 +185,7 @@ terminal_output: terminal
 test: test
 testload: testload
 time: time
+touch: fatfs
 true: true
 umount: fatfs
 version: version
@@ -191,6 +194,7 @@ videotest: videotest
 write_byte: memrw
 write_bytes: memrw
 write_dword: memrw
+write_file: fatfs
 write_word: memrw
 xnu_uuid: xnu_uuid
 zfs-bootfs: zfsinfo
