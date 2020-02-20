@@ -1,29 +1,34 @@
 [简体中文](https://a1ive.github.io/grub2-filemanager/) 
 
 # grub2-filemanager 网启版
-1.  uefi下网启文件为loadfmx64.efi.0
-2.  bios下网启文件为pxefm.0
-3.  可以不用借助dir.txt(和g4d的dir.txt通用)直接列表并生成菜单项！tinypxe直接支持，其它web服务器根目录下不能存在index.html且支持目录浏览，无法退回网启菜单请按F5!
+1.  uefi                 网启文件为 loadfmx64.efi.0
+2.  Legacy BIOS  网启文件为 pxefm.0
+3.  可以不用借助dir.txt(和grub4dos的dir.txt通用)直接列表并生成菜单项！tinypxe直接支持，其它web服务器根目录下不能存在index.html且支持目录浏览，无法退回网启菜单请按F5!
 
-4.  efi和bios下均支持直接启动网络上的wim   iso类型的pe
+4.  EFI和Legacy BIOS均支持直接启动网络上的wim、 iso类型的pe
 
 5.  grubfmx64.efi支持本地、网络两用，本地使用也可以按f4开启网络并按f5调出网启菜单
 
 
-###### Leagacy bios
+###### Legacy bios
 
               wim  wimboot
               img  memdisk
               iso  memdisk+sanboot(ipxe)+grub4dos
+              vhd  grub4dos
 
 ###### x86_64-efi
 
               wim  wimboot
-              img map --mem
-              iso map --mem
-              vhd grub4dos
+              img  map --mem
+              iso  map --mem
+              
 
- ![](https://img.shields.io/github/license/a1ive/grub2-filemanager.svg?style=flat) 
+## Download
+
+https://github.com/zwj4031/netgrubfm/releases
+
+
 
 ###### ![](https://img.shields.io/github/license/a1ive/grub2-filemanager.svg?style=flat) ![](https://img.shields.io/github/downloads/a1ive/grub2-filemanager/total.svg?style=flat) ![](https://img.shields.io/github/release/a1ive/grub2-filemanager.svg?style=flat) [![Crowdin](https://badges.crowdin.net/grub2-filemanager/localized.svg)](https://crowdin.com/project/grub2-filemanager)
 
