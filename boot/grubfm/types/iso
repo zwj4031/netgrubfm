@@ -1,32 +1,24 @@
 [type]
 icon = iso
+display = 1
 boot = net/iso.sh
 
 [0]
 menu = iso/loop.sh
 condition = iso/loop_test.sh
-title = "Boot ISO (Loopback)"
+title = "Boot ISO (loopback.cfg)"
 icon = gnu-linux
 enable = all
 
 [1]
-menu = iso/win.sh
-condition = iso/win_test.sh
-title = "Install Windows"
-icon = nt6
-enable = all
-
-[2]
 menu = iso/e2b.sh
 condition = iso/e2b_test.sh
-title = "Boot ISO (Easy2Boot)"
+title = "Boot ISO (partnew)"
 icon = gnu-linux
 enable = all
 
-[3]
+[2]
 menu = iso/map.sh
 title = "Boot ISO (map)"
 icon = iso
 enable = all
-
-
