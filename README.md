@@ -15,13 +15,14 @@
               wim  wimboot
               img  memdisk
               iso  memdisk+sanboot(ipxe)+grub4dos
+	      vhd  grub4dos
 
 ###### x86_64-efi
 
               wim  wimboot
               img map --mem
               iso map --mem
-              vhd grub4dos
+              
 
  ![](https://img.shields.io/github/license/a1ive/grub2-filemanager.svg?style=flat) 
 
