@@ -30,6 +30,7 @@
 *grubfm: grubfm
 *grubfm_about: grubfm
 *grubfm_cat: grubfm
+*grubfm_get: grubfm
 *grubfm_hex: grubfm
 *grubfm_open: grubfm
 *grubfm_set: grubfm
@@ -122,6 +123,7 @@ commandline: commandline
 configfile: configfile
 continue: normal
 coreboot_boottime: cbtime
+cp: fatfs
 crc32: crc
 cutmem: mmap
 decrement: increment
@@ -182,8 +184,10 @@ lssal: lssal
 lua: lua
 macppcbless: macbless
 mactelbless: macbless
+mkdir: fatfs
 module2: multiboot2
 module: multiboot
+mount: fatfs
 multiboot2: multiboot2
 multiboot: multiboot
 nativedisk: nativedisk
@@ -221,6 +225,7 @@ play: play
 read: read
 read_file: read
 reboot: reboot
+rename: fatfs
 reset: reboot
 return: normal
 rmmod: minicmd
@@ -242,6 +247,7 @@ test: test
 testload: testload
 time: time
 true: true
+umount: fatfs
 usb: usbtest
 version: version
 videoinfo: videoinfo

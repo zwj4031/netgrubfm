@@ -28,6 +28,7 @@
 *grubfm: grubfm
 *grubfm_about: grubfm
 *grubfm_cat: grubfm
+*grubfm_get: grubfm
 *grubfm_hex: grubfm
 *grubfm_open: grubfm
 *grubfm_set: grubfm
@@ -97,6 +98,7 @@ cmp: cmp
 commandline: commandline
 configfile: configfile
 continue: normal
+cp: fatfs
 crc32: crc
 cutmem: mmap
 decrement: increment
@@ -131,6 +133,8 @@ lsmod: minicmd
 lssal: lssal
 macppcbless: macbless
 mactelbless: macbless
+mkdir: fatfs
+mount: fatfs
 net_add_addr: net
 net_add_dns: net
 net_add_route: net
@@ -161,6 +165,7 @@ password_pbkdf2: password_pbkdf2
 read: read
 read_file: read
 reboot: reboot
+rename: fatfs
 reset: reboot
 return: normal
 rmmod: minicmd
@@ -179,6 +184,7 @@ test: test
 testload: testload
 time: time
 true: true
+umount: fatfs
 version: version
 videoinfo: videoinfo
 videotest: videotest

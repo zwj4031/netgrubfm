@@ -141,8 +141,8 @@ biosdisk:
 lsapm:
 gcry_sha512: crypto
 password: crypto normal
-efiemu: gcry_crc crypto smbios cpuid acpi
 fshelp:
+efiemu: gcry_crc crypto smbios cpuid acpi
 sleep_test: functional_test datetime
 iorw: extcmd
 xnu: macho bitmap_scale random verifiers extcmd video bitmap boot efiemu relocator mmap
@@ -195,7 +195,7 @@ raid6rec: diskfilter
 minix2:
 mda_text:
 lsacpi: extcmd acpi
-datehook: datetime normal
+datehook: datetime
 loadenv: disk extcmd
 bitmap_scale: bitmap
 probe: extcmd
@@ -257,12 +257,13 @@ diskfilter:
 testload:
 part_apple:
 hexdump: extcmd
-date: extcmd datetime normal
+date: extcmd datetime
 pbkdf2: crypto
 gcry_sha256: crypto
 qnx4: fshelp
-ls: extcmd normal
+ls: extcmd datetime normal
 usbserial_common: serial usb
+fatfs: disk datetime
 ntfscomp: ntfs
 lzopio: crypto
 qnx6: fshelp
@@ -273,7 +274,7 @@ linux16: linux video boot relocator mmap
 cat: extcmd
 ahci: ata boot pci
 pgp: crypto verifiers extcmd mpi gcry_sha1
-normal: net terminal crypto verifiers bufio extcmd boot gettext
+normal: net terminal crypto verifiers bufio datetime extcmd boot gettext
 ufs1:
 mdraid09: diskfilter
 lvm: diskfilter
