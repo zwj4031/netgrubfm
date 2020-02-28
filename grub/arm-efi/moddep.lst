@@ -87,6 +87,7 @@ pbkdf2_test: functional_test pbkdf2 gcry_sha1
 sbpolicy: extcmd
 verifiers:
 bufio:
+lua: btrfs font setjmp disk datetime normal video gfxmenu
 blscfg: extcmd normal
 bfs: fshelp
 gcry_blowfish: crypto
@@ -147,7 +148,7 @@ fb:
 ufs1_be:
 getkey: extcmd
 archelp:
-grubfm: sortlib font extcmd normal video gfxmenu ini
+grubfm: conv sortlib font extcmd normal video gfxmenu ini
 http: net
 zfs: gzio
 search_part_uuid: gpt

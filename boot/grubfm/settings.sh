@@ -17,6 +17,10 @@
 videomode -l mode_list;
 videomode -c mode_current;
 
+menuentry $"Language" --class lang {
+  configfile ${prefix}/language.sh;
+}
+
 if [ -z "${grubfm_efiguard}" ];
 then
   menuentry $"Disable PatchGuard and DSE at boot time" --class konboot {
@@ -71,6 +75,58 @@ submenu $"Resolution (R): ${mode_current}" --class screen --hotkey "r" {
   done;
 }
 
+if grubfm_get --boot;
+then
+  menuentry $"Disable auto-run boot scripts" --class sh {
+    grubfm_set --boot 0;
+    configfile ${prefix}/settings.sh;
+  }
+else
+  menuentry $"Enable auto-run boot scripts" --class sh {
+    grubfm_set --boot 1;
+    configfile ${prefix}/settings.sh;
+  }
+fi;
+
+if grubfm_get --hide;
+then
+  menuentry $"Display non-bootable files" --class search {
+    grubfm_set --hide 0;
+    configfile ${prefix}/settings.sh;
+  }
+else
+  menuentry $"Hide non-bootable files" --class search {
+    grubfm_set --hide 1;
+    configfile ${prefix}/settings.sh;
+  }
+fi;
+
+if [ "${grub_fs_case_sensitive}" != "1" ];
+then
+  menuentry $"Enable case-sensitive filenames" --class strcase {
+    export grub_fs_case_sensitive=1;
+    configfile ${prefix}/settings.sh;
+  }
+else
+  menuentry $"Disable case-sensitive filenames" --class strcase {
+    unset grub_fs_case_sensitive;
+    configfile ${prefix}/settings.sh;
+  }
+fi;
+
+if [ "${grubfm_disable_qsort}" != "1" ];
+then
+  menuentry $"Sort files by name" --class sort {
+    export grubfm_disable_qsort=1;
+    configfile ${prefix}/settings.sh;
+  }
+else
+  menuentry $"Sort files by name" --class cancel {
+    unset grubfm_disable_qsort;
+    configfile ${prefix}/settings.sh;
+  }
+fi;
+
 menuentry $"Load AHCI Driver" --class pmagic {
   insmod ahci;
 }
@@ -85,11 +141,12 @@ menuentry $"Enable serial terminal" --class ms-dos {
   insmod serial;
   terminal_input --append serial;
   terminal_output --append serial;
- }
+}
 
 menuentry $"启用网络" --class net {
   net_dhcp;
   configfile ${prefix}/netboot.sh
 } 
+
 
 source ${prefix}/global.sh;

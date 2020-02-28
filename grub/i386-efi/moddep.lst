@@ -108,7 +108,7 @@ verifiers:
 bufio:
 usbserial_ftdi: serial usb usbserial_common
 legacy_password_test: functional_test legacycfg
-lua: btrfs font setjmp datetime normal video gfxmenu
+lua: btrfs font setjmp disk datetime normal video gfxmenu
 cpuid: extcmd
 blscfg: extcmd normal
 hdparm: extcmd hexdump
@@ -187,7 +187,7 @@ ufs1_be:
 getkey: extcmd
 archelp:
 fdlibm:
-grubfm: sortlib font extcmd normal video gfxmenu ini
+grubfm: conv sortlib font extcmd normal video gfxmenu ini
 http: net
 zfs: gzio
 search_part_uuid: gpt

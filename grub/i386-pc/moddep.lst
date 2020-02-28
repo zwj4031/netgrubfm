@@ -106,7 +106,7 @@ verifiers:
 bufio:
 usbserial_ftdi: serial usb usbserial_common
 legacy_password_test: functional_test legacycfg
-lua: btrfs font setjmp datetime normal video pci gfxmenu
+lua: btrfs font setjmp disk datetime normal video pci gfxmenu
 cpuid: extcmd
 blscfg: extcmd normal
 hdparm: extcmd hexdump
@@ -186,7 +186,7 @@ truecrypt: video boot relocator mmap gzio
 getkey: extcmd
 archelp:
 fdlibm:
-grubfm: sortlib font extcmd normal video gfxmenu ini
+grubfm: conv sortlib font extcmd normal video gfxmenu ini
 ntldr: chain video boot relocator
 http: net
 zfs: gzio
