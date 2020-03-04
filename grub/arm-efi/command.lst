@@ -19,6 +19,7 @@
 *extract_syslinux_entries_configfile: syslinuxcfg
 *extract_syslinux_entries_source: syslinuxcfg
 *file: file
+*fucksb: sbpolicy
 *functional_test: functional_test
 *getargs: getargs
 *getenv: getenv

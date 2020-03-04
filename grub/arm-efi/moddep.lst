@@ -10,8 +10,8 @@ f2fs: fshelp
 part_gpt:
 conv: extcmd
 romfs: fshelp
-read: normal
 lsefimmap:
+read: normal
 gcry_arcfour: crypto
 tftp: net priority_queue
 newc: archelp
@@ -84,10 +84,10 @@ geli: cryptodisk crypto gcry_sha512 pbkdf2 gcry_sha256
 cmdline_cat_test: font functional_test procfs normal video_fb
 part_sun:
 pbkdf2_test: functional_test pbkdf2 gcry_sha1
-sbpolicy: extcmd
 verifiers:
+sbpolicy: extcmd
 bufio:
-lua: btrfs font setjmp disk datetime normal video gfxmenu
+lua: btrfs font setjmp disk datetime read normal video gfxmenu
 blscfg: extcmd normal
 bfs: fshelp
 gcry_blowfish: crypto

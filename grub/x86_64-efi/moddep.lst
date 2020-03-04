@@ -10,8 +10,8 @@ f2fs: fshelp
 part_gpt:
 conv: extcmd
 romfs: fshelp
-read: normal
 lsefimmap:
+read: normal
 gcry_arcfour: crypto
 aout:
 tftp: net priority_queue
@@ -102,12 +102,12 @@ part_sun:
 cbtable:
 pbkdf2_test: functional_test pbkdf2 gcry_sha1
 video_bochs: video video_fb
-sbpolicy: extcmd
 verifiers:
+sbpolicy: extcmd
 bufio:
 usbserial_ftdi: serial usb usbserial_common
 legacy_password_test: functional_test legacycfg
-lua: btrfs font setjmp disk datetime normal video gfxmenu
+lua: btrfs font setjmp disk datetime read normal video gfxmenu
 cpuid: extcmd
 blscfg: extcmd normal
 hdparm: extcmd hexdump
@@ -167,7 +167,7 @@ strtoull_test: functional_test
 bitmap:
 ntfs: fshelp
 multiboot: net linux video boot relocator mmap
-wimboot: map dp extcmd normal
+wimboot: map sbpolicy dp extcmd normal
 tpm: verifiers
 gcry_crc: crypto
 efiload: extcmd
