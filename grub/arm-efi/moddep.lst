@@ -123,6 +123,7 @@ part_dvh:
 lssal:
 ext2: fshelp
 blocklist:
+nes: extcmd video
 net: priority_queue bufio datetime boot
 part_acorn:
 videoinfo: extcmd video

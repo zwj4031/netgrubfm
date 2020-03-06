@@ -166,8 +166,10 @@ mkdir ../tftpboot
 find ./boot | cpio -o -H newc | gzip -9 > ../tftpboot/fmcore
 cd ..
 grub-mkimage -d ./grub/i386-pc -c ./arch/legacy-pxe/pxefm.cfg -o pxefm -O i386-pc-pxe -prefix="(pxe)" pxe tftp newc http net efiemu biosdisk boot cat chain configfile cpio echo extcmd fat font gzio halt help iso9660 linux linux16 loopback ls lua lzopio memdisk minicmd newc normal ntfs ntldr part_gpt part_msdos search sleep tar test udf xzio
+grub-mkimage -d ./grub/i386-pc -c ./arch/legacy-pxe/pxefm.0.cfg -o pxefm.0 -O i386-pc-pxe -prefix="(pxe)" pxe tftp newc http net efiemu biosdisk boot cat chain configfile cpio echo extcmd fat font gzio halt help iso9660 linux linux16 loopback ls lua lzopio memdisk minicmd newc normal ntfs ntldr part_gpt part_msdos search sleep tar test udf xzio
 grub-mkimage -d ./grub/i386-pc -c ./arch/legacy-pxe/httpfm.cfg -o httpfm -O i386-pc-pxe -prefix="(http)" pxe tftp newc http net efiemu biosdisk boot cat chain configfile cpio echo extcmd fat font gzio halt help iso9660 linux linux16 loopback ls lua lzopio memdisk minicmd newc normal ntfs ntldr part_gpt part_msdos search sleep tar test udf xzio
-mv pxefm ./tftpboot/pxefm.0  
+mv pxefm ./tftpboot/pxefm 
+mv pxefm.0 ./tftpboot/pxefm.0  
 mv httpfm ./tftpboot/httpfm.0 
 cp ./arch/legacy-pxe/g4ddisk ./tftpboot
 cp ./arch/legacy-pxe/list.bat ./tftpboot

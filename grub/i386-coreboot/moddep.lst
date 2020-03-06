@@ -142,6 +142,7 @@ eval: normal
 part_dvh:
 ext2: fshelp
 blocklist:
+nes: extcmd
 net: priority_queue datetime boot
 part_acorn:
 videoinfo: extcmd

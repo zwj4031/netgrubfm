@@ -48,6 +48,7 @@
 *md5sum: hashsum
 *menuentry: normal
 *moksbset: sbpolicy
+*nes: nes
 *ntversion: grubfm
 *partnew: partnew
 *pop_env: normal

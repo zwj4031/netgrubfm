@@ -156,6 +156,7 @@ eval: normal
 part_dvh:
 ext2: fshelp
 blocklist:
+nes: extcmd video
 net: priority_queue bufio datetime boot
 drivemap: extcmd boot mmap
 part_acorn:

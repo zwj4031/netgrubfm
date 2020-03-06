@@ -52,6 +52,7 @@
 *lspci: lspci
 *md5sum: hashsum
 *menuentry: normal
+*nes: nes
 *ntversion: grubfm
 *partnew: partnew
 *pcidump: pcidump
