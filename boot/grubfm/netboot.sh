@@ -24,8 +24,7 @@ set netbootxyz=netboot.xyz.lkrn
 set chain=linux16
 set arch="legacy bios"
 fi;
-
-
+source (pxe)/app/config/grubfm;
 
 menuentry $"($net_default_server) [网络] dir.txt" --class net {
  netboot; grubfm_set --boot 1; clear_menu; lua $prefix/netlist.lua;

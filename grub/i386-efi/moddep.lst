@@ -108,7 +108,7 @@ sbpolicy: extcmd
 bufio:
 usbserial_ftdi: serial usb usbserial_common
 legacy_password_test: functional_test legacycfg
-lua: btrfs font setjmp disk datetime read normal video gfxmenu
+lua: btrfs bitmap_scale font setjmp disk datetime read normal bitmap video gfxmenu
 cpuid: extcmd
 blscfg: extcmd normal
 hdparm: extcmd hexdump
@@ -309,4 +309,5 @@ gcry_md5: crypto
 part_msdos:
 gcry_camellia: crypto
 at_keyboard: keylayouts boot
+bmp: bufio bitmap
 all_video: efi_gop efi_uga video_bochs video_cirrus

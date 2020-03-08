@@ -41,6 +41,13 @@ mkdir build
 echo "common files"
 cp -r boot build/
 
+cp grub/locale/*.mo build/boot/grubfm/locale/
+cd lang
+for po in */fm.po; do
+  msgfmt ${po} -o ../build/boot/grubfm/locale/fm/${po%/*}.mo
+done
+cd ..
+
 echo "Language"
 echo "1. Simplified Chinese"
 echo "2. Traditional Chinese"
@@ -54,8 +61,6 @@ read -p "Please make a choice: " choice
 case "$choice" in
     2)
         echo "zh_TW"
-        cp grub/locale/zh_TW.mo build/boot/grubfm/locale/zh_TW.mo
-        msgfmt lang/zh_TW/fm.po -o build/boot/grubfm/locale/fm/zh_TW.mo
         cp lang/zh_TW/lang.sh build/boot/grubfm/
         ;;
     3)
@@ -63,38 +68,26 @@ case "$choice" in
         ;;
     4)
         echo "tr_TR"
-        cp grub/locale/tr_TR.mo build/boot/grubfm/locale/tr_TR.mo
-        msgfmt lang/tr_TR/fm.po -o build/boot/grubfm/locale/fm/tr_TR.mo
         cp lang/tr_TR/lang.sh build/boot/grubfm/
         ;;
     5)
         echo "de_DE"
-        cp grub/locale/de_DE.mo build/boot/grubfm/locale/de_DE.mo
-        msgfmt lang/de_DE/fm.po -o build/boot/grubfm/locale/fm/de_DE.mo
         cp lang/de_DE/lang.sh build/boot/grubfm/
         ;;
     6)
         echo "vi_VN"
-        cp grub/locale/vi_VN.mo build/boot/grubfm/locale/vi_VN.mo
-        msgfmt lang/vi_VN/fm.po -o build/boot/grubfm/locale/fm/vi_VN.mo
         cp lang/vi_VN/lang.sh build/boot/grubfm/
         ;;
     7)
         echo "ru_RU"
-        cp grub/locale/ru_RU.mo build/boot/grubfm/locale/ru_RU.mo
-        msgfmt lang/ru_RU/fm.po -o build/boot/grubfm/locale/fm/ru_RU.mo
         cp lang/ru_RU/lang.sh build/boot/grubfm/
         ;;
     8)
         echo "he_IL"
-        #cp grub/locale/he_IL.mo build/boot/grubfm/locale/he_IL.mo
-        msgfmt lang/he_IL/fm.po -o build/boot/grubfm/locale/fm/he_IL.mo
         cp lang/he_IL/lang.sh build/boot/grubfm/
         ;;
     *)
         echo "zh_CN"
-        cp grub/locale/zh_CN.mo build/boot/grubfm/locale/zh_CN.mo
-        msgfmt lang/zh_CN/fm.po -o build/boot/grubfm/locale/fm/zh_CN.mo
         cp lang/zh_CN/lang.sh build/boot/grubfm/
         ;;
 esac
@@ -139,6 +132,11 @@ rm build/memdisk.cpio
 echo "i386-pc"
 builtin=$(cat arch/legacy/builtin.lst) 
 mkdir build/boot/grubfm/i386-pc
+rm -r ./tftpboot
+mkdir ./tftpboot
+mkdir ./tftpboot/app
+mkdir ./tftpboot/app/config
+mkdir ./tftpboot/app/legacy
 modlist="$(cat arch/legacy/insmod.lst) $(cat arch/legacy/optional.lst)"
 for modules in $modlist
 do
@@ -153,6 +151,7 @@ cp arch/legacy/ipxe.lkrn build/boot/grubfm/
 cp arch/legacy/*.gz build/boot/grubfm/
 cd build
 find ./boot | cpio -o -H newc | gzip -9 > ./fm.loop
+find ./boot | cpio -o -H newc | gzip -9 > ../tftpboot/fmcore
 cd ..
 rm -r build/boot
 grub-mkimage -d ./grub/i386-pc -p "(memdisk)/boot/grubfm" -c arch/legacy/config.cfg -o ./build/core.img -O i386-pc $builtin
@@ -160,6 +159,15 @@ cat grub/i386-pc/cdboot.img build/core.img > build/fmldr
 rm build/core.img
 cp arch/legacy/MAP build/
 cp -r arch/legacy/ntboot/* build/
-
 $geniso -R -hide-joliet boot.catalog -b fmldr -no-emul-boot -allow-lowercase -boot-load-size 4 -boot-info-table -o grubfm.iso build
+
+grub-mkimage -d ./grub/i386-pc -c ./arch/legacy-pxe/pxefm.cfg -o pxefm -O i386-pc-pxe -prefix="(pxe)" pxe tftp newc http net efiemu biosdisk boot cat chain configfile cpio echo extcmd fat font gzio halt help iso9660 linux linux16 loopback ls lua lzopio memdisk minicmd newc normal ntfs ntldr part_gpt part_msdos search sleep tar test udf xzio
+grub-mkimage -d ./grub/i386-pc -c ./arch/legacy-pxe/httpfm.cfg -o httpfm -O i386-pc-pxe -prefix="(http)" pxe tftp newc http net efiemu biosdisk boot cat chain configfile cpio echo extcmd fat font gzio halt help iso9660 linux linux16 loopback ls lua lzopio memdisk minicmd newc normal ntfs ntldr part_gpt part_msdos search sleep tar test udf xzio
+mv pxefm ./tftpboot/pxefm.0  
+mv httpfm ./tftpboot/httpfm.0 
+cp ./arch/legacy-pxe/list.bat ./tftpboot
+cp ./arch/legacy/grub.exe ./tftpboot/app/legacy
+cp ./arch/x64-pxe/loadefi ./tftpboot/app/config
+cp ./arch/x64-pxe/loadfmx64.efi ./tftpboot/loadfmx64.efi.0
+cp ./grubfmx64.efi ./tftpboot
 rm -r build

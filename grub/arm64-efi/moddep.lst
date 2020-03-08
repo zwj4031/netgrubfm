@@ -88,7 +88,7 @@ pbkdf2_test: functional_test pbkdf2 gcry_sha1
 verifiers:
 sbpolicy: extcmd
 bufio:
-lua: btrfs font setjmp disk datetime read normal video gfxmenu
+lua: btrfs bitmap_scale font setjmp disk datetime read normal bitmap video gfxmenu
 blscfg: extcmd normal
 bfs: fshelp
 gcry_blowfish: crypto
@@ -250,4 +250,5 @@ gcry_md4: crypto
 gcry_md5: crypto
 part_msdos:
 gcry_camellia: crypto
+bmp: bufio bitmap
 all_video: efi_gop

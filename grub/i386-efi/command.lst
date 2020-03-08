@@ -58,7 +58,6 @@
 *map: map
 *md5sum: hashsum
 *menuentry: normal
-*moksbset: sbpolicy
 *nes: nes
 *ntboot: ntboot
 *ntversion: grubfm
