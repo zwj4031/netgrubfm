@@ -88,7 +88,7 @@ pbkdf2_test: functional_test pbkdf2 gcry_sha1
 verifiers:
 sbpolicy: extcmd
 bufio:
-lua: btrfs bitmap_scale font setjmp disk datetime read normal bitmap video gfxmenu
+lua: btrfs bitmap_scale font setjmp disk extcmd datetime read normal bitmap video gfxmenu
 blscfg: extcmd normal
 bfs: fshelp
 gcry_blowfish: crypto
@@ -171,7 +171,7 @@ procfs: archelp
 boot:
 progress: normal
 kernel:
-acpi: extcmd video mmap
+acpi: extcmd procfs video mmap
 tga: bufio bitmap
 reboot:
 serial: extcmd terminfo

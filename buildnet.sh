@@ -137,14 +137,16 @@ modules=$(cat arch/ia32/builtin.lst)
 grub-mkimage -m ./build/memdisk.cpio -d ./grub/i386-efi -p "(memdisk)/boot/grubfm" -c arch/ia32/config.cfg -o grubfmia32.efi -O i386-efi $modules
 rm build/memdisk.cpio
 echo "i386-pc"
-###################################################rm -r tftpboot
+
 builtin=$(cat arch/legacy/builtin.lst) 
 mkdir build/boot/grubfm/i386-pc
+#netboot start
 rm -r ./tftpboot
 mkdir ./tftpboot
 mkdir ./tftpboot/app
 mkdir ./tftpboot/app/config
 mkdir ./tftpboot/app/legacy
+#netboot end
 modlist="$(cat arch/legacy/insmod.lst) $(cat arch/legacy/optional.lst)"
 for modules in $modlist
 do
@@ -159,7 +161,9 @@ cp arch/legacy/ipxe.lkrn build/boot/grubfm/
 cp arch/legacy/*.gz build/boot/grubfm/
 cd build
 find ./boot | cpio -o -H newc | gzip -9 > ./fm.loop
+#netboot start
 find ./boot | cpio -o -H newc | gzip -9 > ../tftpboot/fmcore
+#netboot end
 cd ..
 rm -r build/boot
 grub-mkimage -d ./grub/i386-pc -p "(memdisk)/boot/grubfm" -c arch/legacy/config.cfg -o ./build/core.img -O i386-pc $builtin
@@ -168,7 +172,7 @@ rm build/core.img
 cp arch/legacy/MAP build/
 cp -r arch/legacy/ntboot/* build/
 $geniso -R -hide-joliet boot.catalog -b fmldr -no-emul-boot -allow-lowercase -boot-load-size 4 -boot-info-table -o grubfm.iso build
-
+#netboot start
 grub-mkimage -d ./grub/i386-pc -c ./arch/legacy-pxe/pxefm.cfg -o pxefm -O i386-pc-pxe -prefix="(pxe)" pxe tftp newc http net efiemu biosdisk boot cat chain configfile cpio echo extcmd fat font gzio halt help iso9660 linux linux16 loopback ls lua lzopio memdisk minicmd newc normal ntfs ntldr part_gpt part_msdos search sleep tar test udf xzio
 grub-mkimage -d ./grub/i386-pc -c ./arch/legacy-pxe/pxefm.0.cfg -o pxefm.0 -O i386-pc-pxe -prefix="(pxe)" pxe tftp newc http net efiemu biosdisk boot cat chain configfile cpio echo extcmd fat font gzio halt help iso9660 linux linux16 loopback ls lua lzopio memdisk minicmd newc normal ntfs ntldr part_gpt part_msdos search sleep tar test udf xzio
 grub-mkimage -d ./grub/i386-pc -c ./arch/legacy-pxe/httpfm.cfg -o httpfm -O i386-pc-pxe -prefix="(http)" pxe tftp newc http net efiemu biosdisk boot cat chain configfile cpio echo extcmd fat font gzio halt help iso9660 linux linux16 loopback ls lua lzopio memdisk minicmd newc normal ntfs ntldr part_gpt part_msdos search sleep tar test udf xzio
@@ -184,4 +188,5 @@ cp ./arch/legacy-pxe/grubfm ./tftpboot/app/config
 cp ./arch/x64-pxe/loadefi ./tftpboot/app/config
 cp ./arch/x64-pxe/loadfmx64.efi ./tftpboot/loadfmx64.efi.0
 cp ./grubfmx64.efi ./tftpboot
+#netboot end
 rm -r build

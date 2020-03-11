@@ -97,7 +97,7 @@ pbkdf2_test: functional_test pbkdf2 gcry_sha1
 video_bochs: pci
 verifiers:
 usbserial_ftdi: serial usb usbserial_common
-lua: btrfs bitmap_scale setjmp disk datetime read normal bitmap pci gfxmenu
+lua: btrfs bitmap_scale setjmp disk extcmd datetime read normal bitmap pci gfxmenu
 cpuid: extcmd
 hdparm: extcmd hexdump
 bfs: fshelp

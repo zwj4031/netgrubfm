@@ -55,6 +55,7 @@
 *ls: ls
 *lsacpi: lsacpi
 *lspci: lspci
+*lua: lua
 *map: map
 *md5sum: hashsum
 *menuentry: normal
@@ -182,7 +183,6 @@ lsfonts: font
 lsmmap: lsmmap
 lsmod: minicmd
 lssal: lssal
-lua: lua
 macppcbless: macbless
 mactelbless: macbless
 mkdir: fatfs

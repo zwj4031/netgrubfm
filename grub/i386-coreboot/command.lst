@@ -38,6 +38,7 @@
 *ls: ls
 *lsacpi: lsacpi
 *lspci: lspci
+*lua: lua
 *md5sum: hashsum
 *menuentry: normal
 *nes: nes
@@ -142,7 +143,6 @@ list_trusted: pgp
 lscoreboot: cbls
 lsmmap: lsmmap
 lsmod: minicmd
-lua: lua
 macppcbless: macbless
 mactelbless: macbless
 mkdir: fatfs

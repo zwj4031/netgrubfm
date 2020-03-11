@@ -45,6 +45,7 @@
 *loopback: loopback
 *ls: ls
 *lsacpi: lsacpi
+*lua: lua
 *md5sum: hashsum
 *menuentry: normal
 *nes: nes
@@ -132,7 +133,6 @@ lsfonts: font
 lsmmap: lsmmap
 lsmod: minicmd
 lssal: lssal
-lua: lua
 macppcbless: macbless
 mactelbless: macbless
 mkdir: fatfs

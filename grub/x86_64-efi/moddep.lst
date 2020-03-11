@@ -107,7 +107,7 @@ sbpolicy: extcmd
 bufio:
 usbserial_ftdi: serial usb usbserial_common
 legacy_password_test: functional_test legacycfg
-lua: btrfs bitmap_scale font setjmp disk datetime read normal bitmap video gfxmenu
+lua: btrfs bitmap_scale font setjmp disk extcmd datetime read normal bitmap video gfxmenu
 cpuid: extcmd
 blscfg: extcmd normal
 hdparm: extcmd hexdump
@@ -215,7 +215,7 @@ vhd: extcmd
 usbtest: usb
 relocator: mmap
 linuxefi: linux boot
-acpi: extcmd video mmap
+acpi: extcmd procfs video mmap
 tga: bufio bitmap
 reboot:
 serial: extcmd terminfo
