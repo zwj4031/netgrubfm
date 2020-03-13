@@ -132,7 +132,6 @@ menuentry $"Enable serial terminal" --class ms-dos {
   terminal_input --append serial;
   terminal_output --append serial;
 }
-
 menuentry $"启用网络" --class net {
   net_dhcp;
   configfile ${prefix}/netboot.sh
