@@ -33,8 +33,7 @@ jobs:
         run: |
           sudo sh ./releasenet.sh
    
-      - name: upload netboot
-        uses: "marvinpinto/action-automatic-releases@<VERSION>"
+      - uses: "marvinpinto/action-automatic-releases@<VERSION>"
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
           automatic_release_tag: "Latest-net"
@@ -42,8 +41,7 @@ jobs:
           title: "Development Build netboot [网络启动包]"
           files: ../../netgrubfm.tar.gz
       
-      - name: upload localboot
-        uses: "marvinpinto/action-automatic-releases@<VERSION>"
+      - uses: "marvinpinto/action-automatic-releases@<VERSION>"
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
           automatic_release_tag: "Latest-local"
