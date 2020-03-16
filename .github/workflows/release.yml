@@ -39,7 +39,14 @@ jobs:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
           automatic_release_tag: "Latest"
           prerelease: false
-          title: "Development Build"
+          title: "Development Build netboot"
           files: ../../netgrubfm.tar.gz
-          files: ../../grubfm-zh_CN.7z  
-        
+      
+      - name: upload local
+        uses: marvinpinto/action-automatic-releases@latest
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          automatic_release_tag: "Latest"
+          prerelease: false
+          title: "Development Build localboot"
+          files: ../../grubfm-zh_CN.7z
