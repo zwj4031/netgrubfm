@@ -42,6 +42,7 @@ jobs:
           title: "Development Build [网络+本地包]"
           files: |
             ../../netgrubfm.tar.gz
+            ../../netgrubfm.7z
             ../../grubfm-zh_CN.7z
             
       - name: upload netboot    
