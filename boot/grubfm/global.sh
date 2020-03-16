@@ -50,3 +50,15 @@ hiddenentry "[F5] PXE BOOT MENU" --hotkey f5 {
 hiddenentry "[F6] POWER OFF" --hotkey f6 {
   configfile ${prefix}/power.sh;
 }
+
+hiddenentry "[F] SEARCH FILE" --hotkey f {
+  if [ -n "${grubfm_current_path}" ];
+  then
+    configfile $prefix/search.sh;
+  else
+    echo 错误！请在列表中选择一个设备！
+    echo -n "ESC "
+    sleep -i -v 3
+    grubfm;
+  fi;
+}
