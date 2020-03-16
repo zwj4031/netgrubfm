@@ -10,7 +10,7 @@ if [ -e "netgrubfm.7z" ]
 then
     rm netgrubfm.7z
 fi
- 7z a ../netgrubfm.7z tftpboot/
+7z a ../netgrubfm.7z tftpboot
 cp netgrubfm.7z ../../netgrubfm.7z
 
 
