@@ -32,13 +32,33 @@ jobs:
       - name: makegz
         run: |
           sudo sh ./releasenet.sh
-   
-      - name: upload
+
+      - name: upload all    
         uses: marvinpinto/action-automatic-releases@latest
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
           automatic_release_tag: "Latest"
           prerelease: false
-          title: "Development Build"
-          files: ../../netgrubfm.tar.gz
-        
+          title: "Development Build [网络+本地包]"
+          files: |
+            ../../netgrubfm.tar.gz
+            ../../grubfm-zh_CN.7z
+            
+      - name: upload netboot    
+        uses: marvinpinto/action-automatic-releases@latest
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          automatic_release_tag: "Latest-net"
+          prerelease: false
+          title: "Development Build netboot [网络启动包]"
+          files: |
+            ../../netgrubfm.tar.gz
+                          
+      - name: upload localboot    
+        uses: marvinpinto/action-automatic-releases@latest
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          automatic_release_tag: "Latest-local"
+          prerelease: false
+          title: "Development Build localboot [本地启动包]"
+          files: ../../grubfm-zh_CN.7z
