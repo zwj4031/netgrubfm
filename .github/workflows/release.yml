@@ -33,20 +33,20 @@ jobs:
         run: |
           sudo sh ./releasenet.sh
    
-      - name: upload
+      - name: upload netboot
         uses: marvinpinto/action-automatic-releases@latest
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          automatic_release_tag: "Latest"
+          automatic_release_tag: "Latest-net"
           prerelease: false
           title: "Development Build netboot"
           files: ../../netgrubfm.tar.gz
       
-      - name: upload local
+      - name: upload localboot
         uses: marvinpinto/action-automatic-releases@latest
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          automatic_release_tag: "Latest"
+          automatic_release_tag: "Latest-local"
           prerelease: false
           title: "Development Build localboot"
           files: ../../grubfm-zh_CN.7z
