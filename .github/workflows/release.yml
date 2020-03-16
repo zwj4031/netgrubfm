@@ -41,4 +41,5 @@ jobs:
           prerelease: false
           title: "Development Build"
           files: ../../netgrubfm.tar.gz
+          files: ../../grubfm-zh_CN.7z  
         
