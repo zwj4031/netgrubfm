@@ -15,4 +15,8 @@ mkdir releases
     cd ..
     rm -r releases
 cp grubfm-zh_CN.7z ../../grubfm-zh_CN.7z
+<<<<<<< HEAD
 ls ../../
+=======
+ls ../../
+>>>>>>> e4c0b14f9c6caddc43b89cc785fa50fc8d28fde0
