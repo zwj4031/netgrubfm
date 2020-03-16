@@ -39,10 +39,9 @@ jobs:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
           automatic_release_tag: "Latest"
           prerelease: false
-          title: "Development Build [网络+本地包]"
+          title: "Development Build [本地+网络启动包]"
           files: |
-            ../../netgrubfm.tar.gz
-            ../../netgrubfm.7z
+            ../../netgrubfm-zh_CN.7z
             ../../grubfm-zh_CN.7z
             
       - name: upload netboot    
@@ -53,7 +52,7 @@ jobs:
           prerelease: false
           title: "Development Build netboot [网络启动包]"
           files: |
-            ../../netgrubfm.tar.gz
+            ../../netgrubfm-zh_CN.7z
                           
       - name: upload localboot    
         uses: marvinpinto/action-automatic-releases@latest

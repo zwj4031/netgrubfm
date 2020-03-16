@@ -1,17 +1,12 @@
 #!/usr/bin/env sh
-if [ -e "netgrubfm.tar.gz" ]
-then
-    rm netgrubfm.tar.gz
-fi
-tar -zcvf grub.tar.gz tftpboot
-cp grub.tar.gz ../../netgrubfm.tar.gz
 
-if [ -e "netgrubfm.7z" ]
+if [ -e "netgrubfm-zh_CN.7z" ]
 then
-    rm netgrubfm.7z
+    rm netgrubfm-zh_CN.7z
 fi
-7z a netgrubfm.7z tftpboot
-cp netgrubfm.7z ../../netgrubfm.7z
+7z a netgrubfm-zh_CN.7z tftpboot
+cp netgrubfm-zh_CN.7z ../../netgrubfm-zh_CN.7z
+
 
 
 mkdir releases
