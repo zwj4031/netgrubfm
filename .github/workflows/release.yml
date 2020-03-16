@@ -39,7 +39,7 @@ jobs:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
           automatic_release_tag: "Latest-net"
           prerelease: false
-          title: "Development Build netboot"
+          title: "Development Build netboot [网络启动包]"
           files: ../../netgrubfm.tar.gz
       
       - name: upload localboot
@@ -48,5 +48,5 @@ jobs:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
           automatic_release_tag: "Latest-local"
           prerelease: false
-          title: "Development Build localboot"
+          title: "Development Build localboot [本地启动包]"
           files: ../../grubfm-zh_CN.7z
