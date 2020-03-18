@@ -54,7 +54,7 @@ function google {
     menuentry "返回 " --class go-previous {
     grubfm;
     }	
-    menuentry "当前设备:$zhaowj [回车切换] 请选择文件类型进行搜索 " --class dir {
+    menuentry "当前设备:$zhaowj [回车切换] 请选择文件类型进行搜索 " --class hdd {
 	if [ "$zhaowj" = "${grubfm_current_path}" ];
 	then 
 	set zhaowj="(*)";
