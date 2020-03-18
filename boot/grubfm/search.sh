@@ -51,9 +51,8 @@ function list {
     }
     
 function google {
-    unset default;
     menuentry "返回 " --class go-previous {
-    grubfm
+    grubfm;
     }	
     menuentry "当前设备:$zhaowj [回车切换] 请选择文件类型进行搜索 " --class dir {
 	if [ "$zhaowj" = "${grubfm_current_path}" ];
@@ -112,7 +111,6 @@ list;
 }
 
 }
-default=1;
 google
 
 
