@@ -54,11 +54,10 @@ hiddenentry "[F6] POWER OFF" --hotkey f6 {
 hiddenentry "[F] SEARCH FILE" --hotkey f {
   if [ -n "${grubfm_current_path}" ];
   then
+    export zhaowj=$grubfm_current_path;
     configfile $prefix/search.sh;
   else
-    echo 错误！请在列表中选择一个设备！
-    echo -n "ESC "
-    sleep -i -v 3
-    grubfm;
+    export zhaowj=(*);
+    configfile $prefix/search.sh;
   fi;
 }

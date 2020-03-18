@@ -15,10 +15,14 @@
 # along with Grub2-FileManager.  If not, see <http://www.gnu.org/licenses/>.
 source $prefix/global.sh;
 
-function list {
-    export zhaowj=$grubfm_current_path;
+
+function list {    
     echo "正在搜索\"$zhaowj\"中的$zhaotype文件，稍候... ..."
     for file in $zhaowj*.$zhaotype $zhaowj*/*.$zhaotype $zhaowj*/*/*.$zhaotype; do
+    test -e $zhaowj;      
+           if test $? = "1"; then     
+    continue;
+	       fi
            if ! test -f "$file"; then continue; fi
     regexp -s filename "$zhaowj/(.*)" "$file"
            if [ -z "$havefile" ]; then set havefile="1"; fi	
