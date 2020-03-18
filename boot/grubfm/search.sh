@@ -23,11 +23,12 @@ function list {
            if test $? = "1"; then     
     continue;
 	       fi
-           if ! test -f "$file"; then continue; fi
+           if ! test -f "$file"; then continue;
+		   fi
     regexp -s filename "$zhaowj/(.*)" "$file"
            if [ -z "$havefile" ]; then set havefile="1"; fi	
     set path=""; export path;
-    menuentry "$file" --class wim {
+    menuentry "$file" --class $icon {
     export file=${1}; grubfm_open $file;
     }
     done
@@ -50,53 +51,68 @@ function list {
     }
     
 function google {
-
-    menuentry "请选择你要搜索的文件类型:" --class go-previous {
-    grubfm;
+    unset default;
+    menuentry "返回 " --class go-previous {
+    grubfm
+    }	
+    menuentry "当前设备:$zhaowj [回车切换] 请选择文件类型进行搜索 " --class dir {
+	if [ "$zhaowj" = "${grubfm_current_path}" ];
+	then 
+	set zhaowj="(*)";
+	elif [ "$zhaowj" = "(*)" ];
+	then
+	set zhaowj="(hd0,msdos1)";
+	elif [ "$zhaowj" = "(hd0,msdos1)" ];
+	then
+	set zhaowj="(*)";
+	fi
+	configfile $prefix/search.sh;
+	
     }	
 submenu "wim" --class wim --hotkey=0{
-	 set zhaotype=wim;
+ set zhaotype=wim; set icon=wim;
 		list;
-		
+
 	}
 	submenu "iso" --class iso --hotkey=0{
- set zhaotype=iso;
+ set zhaotype=iso; set icon=iso;
 		list;
 	}
 	submenu "img" --class img --hotkey=1{
- set zhaotype=img;
+ set zhaotype=img; set icon=img;
 		list;
 	}
 	submenu "vhd" --class img --hotkey=0{
- set zhaotype=$hd;
+ set zhaotype=vhd; set icon=img;
 		list;
 	}
 	submenu "efi" --class exe --hotkey=0{
- set zhaotype=efi;
+ set zhaotype=efi; set icon=exe;
 		list;
 	}	
 	submenu "ima" --class img --hotkey=0{
- set zhaotype=ima;
+ set zhaotype=ima; set icon=img;
 		list;
 	}	
 
 	submenu "ipxe" --class net --hotkey=1{
-	 set zhaotype=ipxe;
+ set zhaotype=ipxe; set icon=net;
 		list;
 	}
-	submenu "lst" --class txt --hotkey=0{
-	 set zhaotype=$lst;
+	submenu "lst" --class cfg --hotkey=0{
+ set zhaotype=lst; set icon=cfg;
 		list;
 	}
 	
  submenu $"自定义搜索" --class settings {
-echo $"请输入文件类型，比如'gz' 注意大小写";
+echo $"请输入文件类型，比如'txt'";
 read zhaotype;
+set icon=$zhaotype;
 list;	
 }
 
 }
-
+default=1;
 google
 
 
