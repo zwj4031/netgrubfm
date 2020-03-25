@@ -1,14 +1,4 @@
-# These are supported funding model platforms
-
 github: [zwj4031]
 patreon: zwj4031
-open_collective: # Replace with a single Open Collective username
-ko_fi: # Replace with a single Ko-fi username
-tidelift: npm/zwj4031-package
-community_bridge: # Replace with a single Community Bridge project-name e.g., cloud-foundry
-liberapay: # Replace with a single Liberapay username
-issuehunt: # Replace with a single IssueHunt username
-otechie: # Replace with a single Otechie username
-custom: [‘https://github.com/zwj4031/tinycong", tinycong]
-
-
+tidelift: npm/octo-package
+custom: ["https://github.com/zwj4031/tinycong", sossz.com]
