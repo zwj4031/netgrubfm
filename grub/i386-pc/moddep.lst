@@ -106,7 +106,7 @@ verifiers:
 bufio:
 usbserial_ftdi: serial usb usbserial_common
 legacy_password_test: functional_test legacycfg
-lua: btrfs bitmap_scale font setjmp disk extcmd datetime read normal bitmap video pci gfxmenu
+lua: btrfs bitmap_scale font setjmp disk extcmd datetime read normal bitmap video pci gfxmenu fatfs
 cpuid: extcmd
 blscfg: extcmd normal
 hdparm: extcmd hexdump
@@ -216,6 +216,7 @@ tga: bufio bitmap
 reboot: relocator
 serial: extcmd terminfo
 zfscrypt: crypto pbkdf2 zfs extcmd gcry_sha1 gcry_rijndael
+libreg:
 usb_gamepad: usb
 dm_nv: diskfilter
 cmp_test: functional_test

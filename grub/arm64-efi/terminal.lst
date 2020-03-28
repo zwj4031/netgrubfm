@@ -1,3 +1,4 @@
+imouse: efi_mouse
 iserial_*: serial
 ogfxterm: gfxterm
 oserial_*: serial

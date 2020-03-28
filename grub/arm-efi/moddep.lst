@@ -87,7 +87,7 @@ pbkdf2_test: functional_test pbkdf2 gcry_sha1
 verifiers:
 sbpolicy: extcmd
 bufio:
-lua: btrfs bitmap_scale font setjmp disk extcmd datetime read normal bitmap video gfxmenu
+lua: btrfs bitmap_scale font setjmp disk extcmd datetime read normal bitmap video gfxmenu fatfs
 blscfg: extcmd normal
 bfs: fshelp
 gcry_blowfish: crypto
@@ -174,6 +174,7 @@ tga: bufio bitmap
 reboot:
 serial: extcmd terminfo
 zfscrypt: crypto pbkdf2 zfs extcmd gcry_sha1 gcry_rijndael
+libreg:
 dm_nv: diskfilter
 cmp_test: functional_test
 luks: cryptodisk crypto afsplitter pbkdf2
@@ -199,6 +200,7 @@ gcry_tiger: crypto
 search: search_fs_uuid search_fs_file search_part_uuid extcmd search_disk_uuid search_part_label search_label
 video_fb:
 minix3_be:
+efi_mouse:
 trig:
 msdospart: disk parttool
 priority_queue:
