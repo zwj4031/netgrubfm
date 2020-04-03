@@ -189,6 +189,7 @@ mkdir: fatfs
 module2: multiboot2
 module: multiboot
 mount: fatfs
+mouse_test: efi_mouse
 multiboot2: multiboot2
 multiboot: multiboot
 mv: fatfs

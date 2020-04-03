@@ -251,8 +251,8 @@ lspci: extcmd
 cbtime: cbtable
 video_fb:
 minix3_be:
-efi_mouse:
 trig:
+efi_mouse:
 msdospart: disk parttool
 priority_queue:
 gcry_twofish: crypto

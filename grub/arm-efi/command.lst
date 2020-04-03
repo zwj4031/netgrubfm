@@ -137,6 +137,7 @@ macppcbless: macbless
 mactelbless: macbless
 mkdir: fatfs
 mount: fatfs
+mouse_test: efi_mouse
 mv: fatfs
 net_add_addr: net
 net_add_dns: net

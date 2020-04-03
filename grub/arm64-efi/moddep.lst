@@ -202,8 +202,8 @@ gcry_tiger: crypto
 search: search_fs_uuid search_fs_file search_part_uuid extcmd search_disk_uuid search_part_label search_label
 video_fb:
 minix3_be:
-efi_mouse:
 trig:
+efi_mouse:
 msdospart: disk parttool
 priority_queue:
 gcry_twofish: crypto
