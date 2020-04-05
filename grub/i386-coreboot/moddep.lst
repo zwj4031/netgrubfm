@@ -254,11 +254,12 @@ cat: extcmd
 ahci: ata boot pci
 pgp: crypto verifiers extcmd mpi gcry_sha1
 normal: net terminal crypto verifiers datetime extcmd boot gettext
+lzmaio:
 ufs1:
 mdraid09: diskfilter
 lvm: diskfilter
+chain: elf lzmaio boot cpuid relocator
 cbfs: archelp
-chain: elf boot cpuid relocator
 ufs2:
 time:
 setpci: extcmd pci

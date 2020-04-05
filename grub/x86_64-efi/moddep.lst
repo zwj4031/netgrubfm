@@ -282,6 +282,7 @@ cat: extcmd
 ahci: ata boot
 pgp: crypto verifiers extcmd mpi gcry_sha1
 normal: net terminal crypto verifiers bufio datetime extcmd boot gettext
+lzmaio:
 ufs1:
 mdraid09: diskfilter
 lvm: diskfilter
