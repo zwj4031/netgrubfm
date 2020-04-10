@@ -1,41 +1,20 @@
-[简体中文](https://a1ive.github.io/grub2-filemanager/) 
+[项目主页 (简体中文)](https://a1ive.github.io/grub2-filemanager/) 
 
-# grub2-filemanager 网启版
-1.  uefi                 网启文件为 loadfmx64.efi.0
-2.  Legacy BIOS  网启文件为 pxefm.0
-3.  可以不用借助dir.txt(和grub4dos的dir.txt通用)直接列表并生成菜单项！tinypxe直接支持，其它web服务器根目录下不能存在index.html且支持目录浏览，无法退回网启菜单请按F5!
-
-4.  EFI和Legacy BIOS均支持直接启动网络上的wim、 iso类型的pe
-
-5.  grubfmx64.efi支持本地、网络两用，本地使用也可以按f4开启网络并按f5调出网启菜单
-
-
-###### Legacy bios
-
-              wim  wimboot
-              img  memdisk
-              iso  memdisk+sanboot(ipxe)+grub4dos
-              vhd  grub4dos
-
-###### x86_64-efi
-
-              wim  wimboot
-              img  map --mem
-              iso  map --mem
-              
-
-## Download
-
-https://github.com/zwj4031/netgrubfm/releases
-
-
-
-###### ![](https://img.shields.io/github/license/a1ive/grub2-filemanager.svg?style=flat) ![](https://img.shields.io/github/downloads/a1ive/grub2-filemanager/total.svg?style=flat) ![](https://img.shields.io/github/release/a1ive/grub2-filemanager.svg?style=flat) [![Crowdin](https://badges.crowdin.net/grub2-filemanager/localized.svg)](https://crowdin.com/project/grub2-filemanager)
-
-## Preview [以下为本地版功能]
-
+# Grub2 File Manager 
+![](https://img.shields.io/github/license/a1ive/grub2-filemanager.svg?style=flat) ![](https://img.shields.io/github/downloads/a1ive/grub2-filemanager/total.svg?style=flat) ![](https://img.shields.io/github/release/a1ive/grub2-filemanager.svg?style=flat) [![Crowdin](https://badges.crowdin.net/grub2-filemanager/localized.svg)](https://crowdin.com/project/grub2-filemanager)
+## Content
+- [Preview](#preview)
+- [Support types of files](#support-types-of-files)
+- [Download](#download)
+- [Build](#build)
+- [Boot](#boot)
+- [Source code](#source-code)
+- [Help to translate](#help-to-translate)
+- [Related projects](#related-projects)
+## Preview
 
 ![preview.png](https://github.com/a1ive/grub2-filemanager/raw/gh-pages/preview.png)
+## Support types of files
 
 | Type                                                         | i386-pc | i386-efi | x86_64-efi |
 | :----------------------------------------------------------- | :-----: | :------: | :--------: |
@@ -84,14 +63,15 @@ GRUB2: https://github.com/a1ive/grub
 
 [Crowdin](https://crowdin.com/project/grub2-filemanager) 
 
-## Similar projects 
-*	[Multiboot USB](http://mbusb.aguslr.com/) 
+## Related projects 
+
+*	[Easy2Boot](http://www.easy2boot.com/) 
+*	[GLIM](https://github.com/thias/glim) 
 *	[grub-iso-boot](https://github.com/Jimmy-Z/grub-iso-boot) 
 *	[grub-iso-multiboot](https://github.com/mpolitzer/grub-iso-multiboot) 
-*	[GLIM](https://github.com/thias/glim) 
-*	[Easy2Boot](http://www.easy2boot.com/) 
+*	[GrubFM Installer](https://github.com/QuestYouCraft/grubfm-installer) 
 *	[GRUB2 File Explorer](http://bbs.wuyou.net/forum.php?mod=viewthread&tid=320715) 
-*	[RUN](http://bbs.wuyou.net/forum.php?mod=viewthread&tid=191301) 
 *	[G4D AUTOMENU](http://bbs.wuyou.net/forum.php?mod=viewthread&tid=203607) 
-
-# netgrubfm
+*	[Multiboot USB](http://mbusb.aguslr.com/) 
+*	[RUN](http://bbs.wuyou.net/forum.php?mod=viewthread&tid=191301) 
+*	[Ventoy](https://github.com/ventoy/Ventoy)
