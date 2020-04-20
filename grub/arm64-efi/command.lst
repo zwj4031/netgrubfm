@@ -115,6 +115,7 @@ export: normal
 extract_entries_configfile: configfile
 extract_entries_source: configfile
 false: true
+fixmmap: fixmmap
 fwsetup: efifwsetup
 gptrepair: gptrepair
 gptsync: gptsync

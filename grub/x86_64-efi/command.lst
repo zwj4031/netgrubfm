@@ -143,6 +143,7 @@ extract_legacy_entries_source: legacycfg
 fakebios: loadbios
 false: true
 fix_video: fixvideo
+fixmmap: fixmmap
 fwsetup: efifwsetup
 gamepad_dpad: usb_gamepad
 gptrepair: gptrepair

@@ -89,7 +89,7 @@ morse:
 hashsum: crypto extcmd normal
 usb:
 halt: acpi
-stat: extcmd normal
+stat: extcmd normal mmap
 gfxterm_background: video_colors bitmap_scale gfxterm extcmd video bitmap
 search_fs_uuid:
 gcry_dsa: pgp mpi
@@ -237,6 +237,7 @@ video:
 crc: btrfs
 sortlib:
 cbmemc: normal cbtable terminfo
+fixmmap: normal
 hfsplus: fshelp
 gcry_cast5: crypto
 commandline: normal

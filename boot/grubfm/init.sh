@@ -31,7 +31,7 @@ then
     else
         search -s -f -q /efi/boot/bootx64.efi;
     fi;
-    efiload --nc ${prefix}/CrScreenshotDxe.efi;
+    efiload ${prefix}/CrScreenshotDxe.efi;
     getenv -t uint8 SecureBoot grub_secureboot;
     if [ "${grub_secureboot}" = "1" ];
     then
@@ -56,6 +56,7 @@ then
 else
   export CPU=32;
 fi
+stat -r -q -s RAM;
 
 loadfont ${prefix}/fonts/unicode.xz;
 
