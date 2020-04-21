@@ -107,7 +107,7 @@ sbpolicy: extcmd
 bufio:
 usbserial_ftdi: serial usb usbserial_common
 legacy_password_test: functional_test legacycfg
-lua: btrfs bitmap_scale font setjmp disk extcmd datetime read normal bitmap video gfxmenu fatfs
+lua: btrfs bitmap_scale font setjmp disk extcmd datetime read normal bitmap video gfxmenu fatfs ini
 cpuid: extcmd
 blscfg: extcmd normal
 hdparm: extcmd hexdump
@@ -122,8 +122,8 @@ nativedisk:
 minicmd:
 signature_test: functional_test procfs
 ata: scsi
-udf: fshelp
 uuid: extcmd
+udf: fshelp
 ntboot: map extcmd wimboot
 gzio: gcry_crc
 xnu_uuid: gcry_md5

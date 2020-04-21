@@ -97,7 +97,7 @@ pbkdf2_test: functional_test pbkdf2 gcry_sha1
 video_bochs: pci
 verifiers:
 usbserial_ftdi: serial usb usbserial_common
-lua: btrfs bitmap_scale setjmp disk extcmd datetime read normal bitmap pci gfxmenu fatfs
+lua: btrfs bitmap_scale setjmp disk extcmd datetime read normal bitmap pci gfxmenu fatfs ini
 cpuid: extcmd
 hdparm: extcmd hexdump
 bfs: fshelp
@@ -111,8 +111,8 @@ nativedisk:
 minicmd:
 signature_test: functional_test procfs
 ata: scsi
-udf: fshelp
 uuid: extcmd
+udf: fshelp
 gzio: gcry_crc
 xnu_uuid: gcry_md5
 uhci: usb pci

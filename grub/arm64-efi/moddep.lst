@@ -88,7 +88,7 @@ pbkdf2_test: functional_test pbkdf2 gcry_sha1
 verifiers:
 sbpolicy: extcmd
 bufio:
-lua: btrfs bitmap_scale font setjmp disk extcmd datetime read normal bitmap video gfxmenu fatfs
+lua: btrfs bitmap_scale font setjmp disk extcmd datetime read normal bitmap video gfxmenu fatfs ini
 blscfg: extcmd normal
 bfs: fshelp
 gcry_blowfish: crypto
@@ -99,8 +99,8 @@ gcry_rsa: pgp mpi
 cryptodisk: crypto extcmd procfs
 minicmd:
 signature_test: functional_test procfs
-udf: fshelp
 uuid: extcmd
+udf: fshelp
 gzio: gcry_crc
 xnu_uuid: gcry_md5
 mul_test: functional_test
