@@ -25,37 +25,27 @@ set chain=linux16
 set arch="legacy bios"
 fi;
 source (pxe)/app/config/grubfm;
-
+stat -z (pxe)/dir.txt;
+if [ "$?" = "0" ]
+then 
 menuentry $"($net_default_server) [网络] dir.txt" --class net {
  netboot; grubfm_set --boot 1; clear_menu; lua $prefix/netlist.lua;
 }
+
+else
+
+
 menuentry $"($net_default_server) [网络] 自动列表" --class net {
  netboot; grubfm_set --boot 1; clear_menu; html_list (http)/;
 }
-menuentry $"(连接到其它服务器) [网络] dir.txt" --class net {
-echo 格式为:XXX.XXX.XXX.XXX 【可以是域名 如mirrors.163.com】
-echo 请输入IP或域名:; read net_default_server; export net_default_server; grubfm_set --boot 1; clear_menu; lua $prefix/netlist.lua;
-}
-
-menuentry $"(连接到其它服务器) [网络] 自动列表" --class net {
-echo 格式为:XXX.XXX.XXX.XXX 【可以是域名 如mirrors.163.com】
-echo 请输入IP或域名:; read net_default_server; export net_default_server; grubfm_set --boot 1; clear_menu; html_list (http)/;
-}
+fi;
 
 
-menuentry $"(在线安装Linux)   [网络] $arch" --class net {
+
+menuentry $"(在线安装Linux)  [网络] $arch" --class net {
 set lang=en_US; terminal_output console;
 echo wait...................;
 $chain (http,boot.netboot.xyz)/ipxe/$netbootxyz
-}
-
-
-
-menuentry $"(在线安装Ubuntu)  [网络]" --class net {
-set lang=en_US; terminal_output console;
-echo wait...................;
-linux (http,mirrors.163.com)/ubuntu/dists/bionic-updates/main/installer-amd64/current/images/netboot/ubuntu-installer/amd64/linux
-initrd (http,mirrors.163.com)/ubuntu/dists/bionic-updates/main/installer-amd64/current/images/netboot/ubuntu-installer/amd64/initrd.gz
 }
 
 

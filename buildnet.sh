@@ -109,6 +109,7 @@ done
 cp arch/x64/*.efi build/boot/grubfm
 cp arch/x64/*.gz build/boot/grubfm
 cp arch/x64-pxe/*.* build/boot/grubfm/
+cp arch/legacy-pxe/tool.gz build/boot/grubfm/
 cd build
 find ./boot | cpio -o -H newc > ./memdisk.cpio
 cd ..
@@ -159,6 +160,7 @@ cp arch/legacy/duet64.iso build/boot/grubfm/
 cp arch/legacy/memdisk build/boot/grubfm/
 cp arch/legacy/ipxe.lkrn build/boot/grubfm/
 cp arch/legacy/*.gz build/boot/grubfm/
+cp arch/legacy-pxe/tool.gz build/boot/grubfm/
 cd build
 find ./boot | cpio -o -H newc | gzip -9 > ./fm.loop
 #netboot start
@@ -188,5 +190,6 @@ cp ./arch/legacy-pxe/grubfm ./tftpboot/app/config
 cp ./arch/x64-pxe/loadefi ./tftpboot/app/config
 cp ./arch/x64-pxe/loadfmx64.efi ./tftpboot/loadfmx64.efi.0
 cp ./grubfmx64.efi ./tftpboot
+cp -r ./tftpboot/* /mnt/s/netinstall-master/
 #netboot end
 rm -r build
