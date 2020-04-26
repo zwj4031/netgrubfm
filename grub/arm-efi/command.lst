@@ -12,6 +12,7 @@
 *cryptomount: cryptodisk
 *date: date
 *dd: dd
+*disable_wpbt: acpi
 *dp: dp
 *echo: echo
 *efiload: efiload
@@ -63,6 +64,7 @@
 *search: search
 *serial: serial
 *setenv: setenv
+*setkey: setkey
 *sha1sum: hashsum
 *sha256sum: hashsum
 *sha512sum: hashsum

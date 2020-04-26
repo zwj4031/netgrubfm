@@ -21,6 +21,10 @@ menuentry $"Language" --class lang {
   lua ${prefix}/language.lua;
 }
 
+menuentry $"Keyboard layouts" --class gkb {
+  lua ${prefix}/kbd.lua;
+}
+
 if [ "${mode_current}" != "0x0" ];
 then
   menuentry $"Disable graphics mode (T)" --class ms-dos --hotkey "t" {
@@ -98,6 +102,15 @@ then
 else
   menuentry $"Hide non-bootable files" --class search {
     grubfm_set --hide 1;
+    configfile ${prefix}/settings.sh;
+  }
+fi;
+
+if [ "${grub_platform}" = "efi" -a -z "${grubfm_fixmmap}" ];
+then
+  menuentry $"Fix \"BlInitializeLibrary failed XXX\" error" --class mem {
+    fixmmap;
+    export grubfm_fixmmap=1453;
     configfile ${prefix}/settings.sh;
   }
 fi;

@@ -1,6 +1,7 @@
 videotest: font video gfxmenu
 odc: archelp
 loopback: extcmd
+setkey: extcmd
 macho:
 ini: extcmd
 gcry_des: crypto
