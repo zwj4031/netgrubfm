@@ -51,7 +51,7 @@ fi;
 }
 
 function setupmenu {
-menuentry $"安装微软原版iso (http即时加载) " --class wim {
+menuentry $"安装微软原版iso (http即时加载) " --class nt6 {
         check;
 		set lang=en_US; terminal_output console; set enable_progress_indicator=1; 
         export isopath="http://${net_default_server}$grubfm_path"; 
@@ -59,7 +59,7 @@ menuentry $"安装微软原版iso (http即时加载) " --class wim {
 		setupiso;
 }
 
-menuentry $"安装微软原版iso (http延时加载) " --class wim {
+menuentry $"安装微软原版iso (http延时加载) " --class nt6 {
         check; 
 		set lang=en_US; terminal_output console; set enable_progress_indicator=1; 
         export isopath="http://${net_default_server}$grubfm_path"; 
