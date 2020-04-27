@@ -182,7 +182,7 @@ mv pxefm ./tftpboot/pxefm
 mv pxefm.0 ./tftpboot/pxefm.0  
 mv httpfm ./tftpboot/httpfm.0 
 cp ./arch/legacy-pxe/g4ddisk ./tftpboot
-cp ./arch/legacy-pxe/list.bat ./tftpboot
+cp ./arch/legacy-pxe/*.bat ./tftpboot
 cp ./arch/legacy/grub.exe ./tftpboot/app/legacy
 cp ./arch/legacy-pxe/grldr ./tftpboot/app/legacy
 cp ./arch/legacy-pxe/grub.bat ./tftpboot/app/legacy
@@ -190,6 +190,8 @@ cp ./arch/legacy-pxe/grubfm ./tftpboot/app/config
 cp ./arch/x64-pxe/loadefi ./tftpboot/app/config
 cp ./arch/x64-pxe/loadfmx64.efi ./tftpboot/loadfmx64.efi.0
 cp ./grubfmx64.efi ./tftpboot
-cp -r ./tftpboot/* /mnt/s/netinstall-master/
+cp -r bin tftpboot/
+
+
 #netboot end
 rm -r build

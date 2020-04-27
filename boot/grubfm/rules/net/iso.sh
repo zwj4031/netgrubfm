@@ -18,7 +18,8 @@ wimboot @:bootmgfw.efi:(wimboot)/bootmgfw.efi \
         @:startup.bat:(tool)/startup.bat \
         @:scx64.exe:(tool)/scx64.exe \
         @:scx86.exe:(tool)/scx86.exe \
-        @:xfs_redir.sys:(tool)/xfs_redir32.sys \
+        @:xfs_redir.sys:(tool)/xfs_redir.sys \
+		@:xfs_redir32.sys:(tool)/xfs_redir32.sys \
         @:xFsRedirx64.exe:(tool)/xFsRedirx64.exe \
         @:xFsRedirx86.exe:(tool)/xFsRedirx86.exe \
         @:boot.wim:${setupwim};
@@ -41,7 +42,8 @@ wimboot @:bootmgfw.efi:(wimboot)/bootmgfw.efi \
         newc:startup.bat:(tool)/startup.bat \
         newc:scx64.exe:(tool)/scx64.exe \
         newc:scx86.exe:(tool)/scx86.exe \
-        newc:xfs_redir.sys:(tool)/xfs_redir32.sys \
+        newc:xfs_redir.sys:(tool)/xfs_redir.sys \
+	    newc:xfs_redir32.sys:(tool)/xfs_redir32.sys \
         newc:xFsRedirx64.exe:(tool)/xFsRedirx64.exe \
         newc:xFsRedirx86.exe:(tool)/xFsRedirx86.exe \
         newc:boot.wim:${setupwim};
