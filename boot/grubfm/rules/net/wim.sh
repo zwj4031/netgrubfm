@@ -17,7 +17,7 @@ then
   echo                 ;
   echo                 ;
   echo                 ;
-  linuxefi (wimboot)/wimboot;
+  linuxefi $prefix/wimboot;
   initrdefi newc:bootmgfw.efi:(wimboot)/bootmgfw.efi \
             newc:bcd:(wimboot)/bcd \
             newc:boot.sdi:(wimboot)/boot.sdi \

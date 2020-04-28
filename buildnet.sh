@@ -108,7 +108,8 @@ do
 done
 cp arch/x64/*.efi build/boot/grubfm
 cp arch/x64/*.gz build/boot/grubfm
-cp arch/x64-pxe/*.* build/boot/grubfm/
+#cp arch/x64-pxe/*.* build/boot/grubfm/
+cp arch/x64-pxe/wimboot build/boot/grubfm/
 cp arch/legacy-pxe/tool.gz build/boot/grubfm/
 cd build
 find ./boot | cpio -o -H newc > ./memdisk.cpio
@@ -185,7 +186,7 @@ cp ./arch/legacy-pxe/g4ddisk ./tftpboot
 cp ./arch/legacy-pxe/*.bat ./tftpboot
 cp ./arch/legacy/grub.exe ./tftpboot/app/legacy
 cp ./arch/legacy-pxe/grldr ./tftpboot/app/legacy
-cp ./arch/legacy-pxe/grub.bat ./tftpboot/app/legacy
+#cp ./arch/legacy-pxe/grub.bat ./tftpboot/app/legacy
 cp ./arch/legacy-pxe/grubfm ./tftpboot/app/config
 cp ./arch/x64-pxe/loadefi ./tftpboot/app/config
 cp ./arch/x64-pxe/loadfmx64.efi ./tftpboot/loadfmx64.efi.0
