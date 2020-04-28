@@ -20,9 +20,11 @@ exit /b
 if exist "%temp%\getadmin.vbs" ( del "%temp%\getadmin.vbs" ) 1>nul 2>nul
 
 (
+echo [arch]
+echo 00007=loadfmx64.efi.0
 echo [dhcp]
 echo start=1
-echo proxydhcp=1
+echo proxydhcp=0
 echo httpd=0
 echo bind=1
 echo poolsize=998
