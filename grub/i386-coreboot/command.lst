@@ -74,6 +74,7 @@
 *tr: tr
 *trust: pgp
 *uuid4: uuid
+*ventoy: ventoy
 *verify_detached: pgp
 *vhd: vhd
 *videomode: videoinfo

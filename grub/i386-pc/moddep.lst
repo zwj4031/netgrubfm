@@ -138,6 +138,7 @@ crypto:
 part_bsd: part_msdos
 luks2: cryptodisk crypto json afsplitter pbkdf2
 cs5536: pci
+ventoy: extcmd
 biosdisk:
 lsapm:
 gcry_sha512: crypto

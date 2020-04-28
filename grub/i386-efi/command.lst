@@ -99,6 +99,7 @@
 *tr: tr
 *trust: pgp
 *uuid4: uuid
+*ventoy: ventoy
 *verify_detached: pgp
 *vfat: wimboot
 *vhd: vhd

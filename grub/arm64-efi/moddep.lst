@@ -111,6 +111,7 @@ div:
 crypto:
 part_bsd: part_msdos
 luks2: cryptodisk crypto json afsplitter pbkdf2
+ventoy: extcmd
 gcry_sha512: crypto
 password: crypto normal
 fshelp:

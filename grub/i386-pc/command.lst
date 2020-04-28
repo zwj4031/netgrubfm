@@ -93,6 +93,7 @@
 *vboot16: vboot
 *vboot: vboot
 *vbootinsmod: vboot
+*ventoy: ventoy
 *verify_detached: pgp
 *vhd: vhd
 *videomode: videoinfo
