@@ -28,9 +28,9 @@ echo bind=1
 echo poolsize=998
 echo root=%~dp0
 echo filename=loadfmx64.efi.0
-)>%~dp0\bin\config.INI
-start "" /min %~dp0\bin\hfs.exe -c active=yes -a %~dp0\bin\myhfs.ini
-for /f %%a in ('dir /b/a-d *.*') do start "" /min %~dp0\bin\hfs.exe %%a
-start "" /min %~dp0\bin\hfs.exe  %~dp0\app
-start ""  %~dp0\bin\pxesrv.exe
+)>%~dp0bin\config.INI
+start "" /min %~dp0bin\hfs.exe -c active=yes -a %~dp0bin\myhfs.ini
+for /f %%a in ('dir /b/a-d *.*') do start "" /min %~dp0bin\hfs.exe %%a
+start "" /min %~dp0bin\hfs.exe  %~dp0app
+start ""  %~dp0bin\pxesrv.exe
 exit
