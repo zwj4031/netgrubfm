@@ -144,10 +144,8 @@ builtin=$(cat arch/legacy/builtin.lst)
 mkdir build/boot/grubfm/i386-pc
 #netboot start
 rm -r ./tftpboot
-mkdir ./tftpboot
-mkdir ./tftpboot/app
-mkdir ./tftpboot/app/config
-mkdir ./tftpboot/app/legacy
+mkdir -p ./tftpboot/app/config
+mkdir -p ./tftpboot/app/legacy
 #netboot end
 modlist="$(cat arch/legacy/insmod.lst) $(cat arch/legacy/optional.lst)"
 for modules in $modlist
@@ -182,6 +180,7 @@ grub-mkimage -d ./grub/i386-pc -c ./arch/legacy-pxe/httpfm.cfg -o httpfm -O i386
 mv pxefm ./tftpboot/pxefm 
 mv pxefm.0 ./tftpboot/pxefm.0  
 mv httpfm ./tftpboot/httpfm.0 
+mkdir ./tftpboot/imgs
 cp ./arch/legacy-pxe/g4ddisk ./tftpboot
 cp ./arch/legacy-pxe/*.bat ./tftpboot
 cp ./arch/legacy/grub.exe ./tftpboot/app/legacy

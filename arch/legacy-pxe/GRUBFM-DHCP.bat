@@ -1,11 +1,9 @@
-echo off
+@echo off
 mode con cols=50 lines=5
 title=building......
-taskkill /f /im pxesrv.exe
-taskkill /f /im hfs.exe
+@taskkill /f /im pxesrv.exe
+@taskkill /f /im hfs.exe
 cd /d %~dp0
-
-
 :: 获取管理员权限运行批处理
 >nul 2>&1 "%SYSTEMROOT%\system32\cacls.exe" "%SYSTEMROOT%\system32\config\system"
 if '%errorlevel%' NEQ '0' (
@@ -18,7 +16,6 @@ echo UAC.ShellExecute "%~s0", "", "", "runas", 1 >> "%temp%\getadmin.vbs"
 exit /b
 :gotAdmin
 if exist "%temp%\getadmin.vbs" ( del "%temp%\getadmin.vbs" ) 1>nul 2>nul
-
 (
 echo [arch]
 echo 00007=loadfmx64.efi.0
@@ -31,8 +28,9 @@ echo poolsize=998
 echo root=%~dp0
 echo filename=pxefm.0
 )>%~dp0bin\config.INI
+
 start "" /min %~dp0bin\hfs.exe -c active=yes -a %~dp0bin\myhfs.ini
 for /f %%a in ('dir /b/a-d *.*') do start "" /min %~dp0bin\hfs.exe %%a
-start "" /min %~dp0bin\hfs.exe  %~dp0app
+call %~dp0bin\hfs.exe %~dp0%app imgs isos vhds pe wims wim
 start ""  %~dp0bin\pxesrv.exe
 exit
