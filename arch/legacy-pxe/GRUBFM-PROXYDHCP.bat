@@ -31,6 +31,6 @@ echo filename=pxefm.0
 
 start "" /min %~dp0bin\hfs.exe -c active=yes -a %~dp0bin\myhfs.ini
 for /f %%a in ('dir /b/a-d *.*') do start "" /min %~dp0bin\hfs.exe %%a
-call %~dp0bin\hfs.exe %~dp0%app imgs isos vhds pe wims wim
+call %~dp0bin\hfs.exe %~dp0%app imgs isos vhds pe wims wim boot
 start ""  %~dp0bin\pxesrv.exe
 exit
