@@ -18,7 +18,7 @@ exit /b
 if exist "%temp%\getadmin.vbs" ( del "%temp%\getadmin.vbs" ) 1>nul 2>nul
 (
 echo [arch]
-echo 00007=loadfmx64.efi.0
+echo 00007=ipxe.efi
 echo [dhcp]
 echo start=1
 echo proxydhcp=1
@@ -26,7 +26,8 @@ echo httpd=0
 echo bind=1
 echo poolsize=998
 echo root=%~dp0
-echo filename=pxefm.0
+echo filename=ipxe.bios
+echo altfilename=app\netgrubfm\netgrubfm.ipxe
 )>%~dp0bin\config.INI
 
 start "" /min %~dp0bin\hfs.exe -c active=yes -a %~dp0bin\myhfs.ini
