@@ -1,6 +1,7 @@
 *acpi: acpi
 *all_functional_test: functional_test
 *background_image: gfxterm_background
+*blocklist: blocklist
 *bls_import: blscfg
 *blscfg: blscfg
 *btrfs-get-default-subvol: btrfs
@@ -82,7 +83,6 @@
 *tr: tr
 *trust: pgp
 *uuid4: uuid
-*ventoy: ventoy
 *verify_detached: pgp
 *videomode: videoinfo
 *zfskey: zfscrypt
@@ -91,7 +91,6 @@
 authenticate: normal
 background_color: gfxterm_background
 badram: mmap
-blocklist: blocklist
 boot: boot
 break: normal
 btrfs-info: btrfs

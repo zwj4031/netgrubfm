@@ -138,8 +138,8 @@ crypto:
 part_bsd: part_msdos
 luks2: cryptodisk crypto json afsplitter pbkdf2
 cs5536: pci
-ventoy: extcmd
 biosdisk:
+ventoy: crypto udf extcmd normal wimboot gcry_sha1 iso9660
 lsapm:
 gcry_sha512: crypto
 password: crypto normal
@@ -157,7 +157,7 @@ cmostest:
 eval: normal
 part_dvh:
 ext2: fshelp
-blocklist:
+blocklist: extcmd
 nes: extcmd video
 net: priority_queue bufio datetime boot
 drivemap: extcmd boot mmap
@@ -170,6 +170,7 @@ bitmap:
 vbe: video video_fb
 ntfs: fshelp
 multiboot: net linux vbe video boot relocator mmap lsapm
+wimboot:
 gcry_crc: crypto
 png: bufio bitmap
 json:

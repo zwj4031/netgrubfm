@@ -109,7 +109,6 @@ terminal:
 crypto:
 part_bsd: part_msdos
 luks2: cryptodisk crypto json afsplitter pbkdf2
-ventoy: extcmd
 gcry_sha512: crypto
 password: crypto normal
 fshelp:
@@ -124,7 +123,7 @@ eval: normal
 part_dvh:
 lssal:
 ext2: fshelp
-blocklist:
+blocklist: extcmd
 nes: extcmd video
 net: priority_queue bufio datetime boot
 part_acorn:

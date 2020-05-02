@@ -1,6 +1,7 @@
 *acpi: acpi
 *all_functional_test: functional_test
 *background_image: gfxterm_background
+*blocklist: blocklist
 *bls_import: blscfg
 *blscfg: blscfg
 *btrfs-get-default-subvol: btrfs
@@ -114,7 +115,6 @@ authenticate: normal
 background_color: gfxterm_background
 backtrace: backtrace
 badram: mmap
-blocklist: blocklist
 boot: boot
 break: normal
 btrfs-info: btrfs

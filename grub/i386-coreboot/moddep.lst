@@ -127,7 +127,6 @@ crypto:
 part_bsd: part_msdos
 luks2: cryptodisk crypto json afsplitter pbkdf2
 cs5536: pci
-ventoy: extcmd
 gcry_sha512: crypto
 password: crypto normal
 efiemu: gcry_crc crypto smbios cpuid acpi
@@ -143,7 +142,7 @@ cmostest:
 eval: normal
 part_dvh:
 ext2: fshelp
-blocklist:
+blocklist: extcmd
 nes: extcmd
 net: priority_queue datetime boot
 part_acorn:

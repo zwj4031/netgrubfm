@@ -15,25 +15,14 @@
 # along with Grub2-FileManager.  If not, see <http://www.gnu.org/licenses/>.
 
 function to_g4d_path {
-  if regexp --set=1:num '^\(hd[0-9]+,[a-zA-Z]*([0-9]+)\).*' "${1}";
-  then
-    # (hdx,msdosy) (hdx,gpty) (hdx,y)
-    expr --set=num "${num} - 1";
-    regexp --set=1:path_1 --set=2:path_2 '^(\(hd[0-9]+,)[a-zA-Z]*[0-9]+(\).*)' "${1}";
-    set g4d_path="${path_1}${num}${path_2}";
-  elif regexp '^\([chf]d[0-9]*\).*' "${1}";
-  then
-    # (hd) (cd) (fd) (hdx) (cdx) (fdx)
-    set g4d_path="${1}";
-  else
-    unset g4d_path;
-  fi;
+  set g4d_path="${1}";
+  lua ${prefix}/g4d_path.lua;
 }
 
 regexp --set=1:grubfm_path '(/.*)$' "${grubfm_file}";
 regexp --set=1:grubfm_dir '^(.*/).*$' "${grubfm_path}";
 regexp --set=1:grubfm_device '^\(([0-9a-zA-Z,]+)\)/.*' "${grubfm_file}";
-regexp --set=1:grubfm_disk '(hd[0-9]+),msdos[1-3]' "${grubfm_device}";
+regexp --set=1:grubfm_disk '([chf]d[0-9]+)[0-9,]*' "${grubfm_device}";
 regexp --set=1:grubfm_name '^.*/(.*)$' "${grubfm_file}";
 unset grubfm_filename;
 unset grubfm_fileext;
