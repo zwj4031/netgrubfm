@@ -54,6 +54,7 @@
 *lua: lua
 *md5sum: hashsum
 *menuentry: normal
+*mkinitrd: newc
 *nes: nes
 *ntversion: grubfm
 *partnew: partnew

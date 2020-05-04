@@ -16,7 +16,7 @@ read: normal
 gcry_arcfour: crypto
 aout:
 tftp: net priority_queue
-newc: archelp
+newc: extcmd archelp
 minix2_be:
 afsplitter: crypto
 elf:

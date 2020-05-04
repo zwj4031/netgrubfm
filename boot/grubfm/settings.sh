@@ -115,10 +115,6 @@ then
   }
 fi;
 
-menuentry $"Load AHCI Driver" --class pmagic {
-  insmod ahci;
-}
-
 menuentry $"Mount encrypted volumes (LUKS and geli)" --class konboot {
   insmod luks;
   insmod geli;
@@ -130,9 +126,5 @@ menuentry $"Enable serial terminal" --class ms-dos {
   terminal_input --append serial;
   terminal_output --append serial;
 }
-menuentry $"启用网络" --class net {
-  net_dhcp;
-  configfile ${prefix}/netboot.sh
-} 
 
 source ${prefix}/global.sh;

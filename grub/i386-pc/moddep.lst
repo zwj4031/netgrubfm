@@ -16,7 +16,7 @@ gcry_arcfour: crypto
 aout:
 vga_text:
 tftp: net priority_queue
-newc: archelp
+newc: extcmd archelp
 minix2_be:
 afsplitter: crypto
 elf:

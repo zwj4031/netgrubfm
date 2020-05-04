@@ -13,6 +13,7 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with Grub2-FileManager.  If not, see <http://www.gnu.org/licenses/>.
+
 if [ -f "${theme_fm}" ];
 then
   export theme=${theme_fm};
@@ -49,15 +50,4 @@ hiddenentry "[F5] PXE BOOT MENU" --hotkey f5 {
 
 hiddenentry "[F6] POWER OFF" --hotkey f6 {
   configfile ${prefix}/power.sh;
-}
-
-hiddenentry "[F] SEARCH FILE" --hotkey f {
-  if [ -n "${grubfm_current_path}" ];
-  then
-    export zhaowj=$grubfm_current_path;
-    configfile $prefix/search.sh;
-  else
-    export zhaowj=(*);
-    configfile $prefix/search.sh;
-  fi;
 }
