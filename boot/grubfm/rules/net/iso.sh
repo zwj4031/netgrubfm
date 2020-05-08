@@ -1,5 +1,7 @@
 default=1;
 timeout=5;
+
+
 function setupiso {
 if [ "$grub_platform" = "efi" ];
     then 
@@ -87,8 +89,16 @@ fi;
 }
 
 function setupmenu {
+loopback loop $grubfm_file;
+set win_prefix=(loop)/sources/install;
+if [ -f (loop)/sources/boot.wim -a \
+       -f ${win_prefix}.wim -o -f ${win_prefix}.esd -o -f ${win_prefix}.swm ];
+  then
+loopback -d loop;
+
 menuentry $"安装微软原版iso (http即时加载) " --class nt6 {
         check; unset debug; clear;
+		loopback -d loop;
 		set lang=en_US; terminal_output console; set enable_progress_indicator=1; 
         export isopath="http://${net_default_server}$grubfm_path"; 
 		export httptimeout=1;
@@ -97,11 +107,13 @@ menuentry $"安装微软原版iso (http即时加载) " --class nt6 {
 
 menuentry $"安装微软原版iso (http延时加载) " --class nt6 {
         check; unset debug; clear;
+		loopback -d loop;
 		set lang=en_US; terminal_output console; set enable_progress_indicator=1; 
         export isopath="http://${net_default_server}$grubfm_path"; 
 		export httptimeout=6; 
         setupiso;
 }
+fi;
 }
 
 function check {

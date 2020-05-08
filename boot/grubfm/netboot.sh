@@ -42,7 +42,7 @@ fi;
 
 
 
-menuentry $"(在线安装Linux)  [网络] $arch" --class net {
+menuentry $"(在线安装Linux)  [网络] $arch" --class gnu-linux {
 set lang=en_US; terminal_output console;
 echo wait...................;
 $chain (http,boot.netboot.xyz)/ipxe/$netbootxyz

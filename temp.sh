@@ -201,5 +201,6 @@ cp -r bin tftpboot/
 
 #netboot end
 rm -r build
-cp ./tftpboot/* /mnt/s/netinstall-master
+cp -r ./tftpboot/* /mnt/s/netinstall-master
+cp -r ./tftpboot/* /mnt/s/netgrubfm
 rm -r tftpboot
