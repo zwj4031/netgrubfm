@@ -1,0 +1,3 @@
+#!ipxe
+isset ${proxydhcp/dhcp-server} && chain http://${proxydhcp/dhcp-server}/app/netgrubfm/netgrubfm.${platform} proxydhcp=${proxydhcp/dhcp-server} setupwim=${setupwim=} setupiso=${setupiso=} httptimeout=${httptimeout=} autounattend=${autounattend=} ||
+chain http://${next-server}/app/netgrubfm/netgrubfm.${platform} proxydhcp=${next-server} setupwim=${setupwim=} setupiso=${setupiso=} httptimeout=${httptimeout=} autounattend=${autounattend=} 
