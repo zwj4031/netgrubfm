@@ -274,7 +274,7 @@ mpi: crypto
 play:
 part_amiga:
 minix:
-echo: extcmd
+echo: extcmd normal
 gcry_serpent: crypto
 gcry_md4: crypto
 gcry_md5: crypto

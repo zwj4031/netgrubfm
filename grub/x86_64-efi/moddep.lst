@@ -45,6 +45,7 @@ ohci: cs5536 usb boot
 afs: fshelp
 spkmodem: terminfo
 search_part_label: gpt
+crscreenshot:
 usb_keyboard: usb keylayouts
 xzio: crypto
 syslinuxcfg: extcmd normal
@@ -189,8 +190,8 @@ fat: fshelp
 fb:
 ufs1_be:
 getkey: extcmd
-archelp:
 fdlibm:
+archelp:
 grubfm: conv sortlib font extcmd normal video gfxmenu ini
 http: net
 zfs: gzio
@@ -307,7 +308,7 @@ play:
 part_amiga:
 efi_gop: video video_fb
 minix:
-echo: extcmd
+echo: extcmd normal
 lsefi:
 gcry_serpent: crypto
 gcry_md4: crypto

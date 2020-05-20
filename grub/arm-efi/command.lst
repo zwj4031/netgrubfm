@@ -16,6 +16,7 @@
 *disable_wpbt: acpi
 *dp: dp
 *echo: echo
+*efi_connect_all: efiload
 *efiload: efiload
 *expr: expr
 *extract_syslinux_entries_configfile: syslinuxcfg

@@ -248,7 +248,7 @@ mpi: crypto
 part_amiga:
 efi_gop: video video_fb
 minix:
-echo: extcmd
+echo: extcmd normal
 lsefi:
 gcry_serpent: crypto
 gcry_md4: crypto

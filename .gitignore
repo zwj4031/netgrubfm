@@ -1,0 +1,6 @@
+grubfmia32.efi
+grubfm.iso
+grubfmx64.efi
+/tftpboot
+/linux/initrd.xz
+netgrubfm-master

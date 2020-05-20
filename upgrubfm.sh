@@ -12,9 +12,11 @@ echo copy arch
 sudo cp -r ~/git/grub2-filemanager/arch/* ~/git/netgrubfm/arch/
 echo copy lang
 sudo cp -r ~/git/grub2-filemanager/lang/* ~/git/netgrubfm/lang/
-echo copy global settings search.sh
+echo copy global settings search.sh init.sh func.sh build.sh
 sudo cp ~/git/grub2-filemanager/boot/grubfm/global.sh  ~/git/netgrubfm/boot/grubfm/
 sudo cp ~/git/grub2-filemanager/boot/grubfm/settings.sh  ~/git/netgrubfm/boot/grubfm/
 sudo cp ~/git/grub2-filemanager/boot/grubfm/search.sh ~/git/netgrubfm/boot/grubfm/
+sudo cp ~/git/grub2-filemanager/boot/grubfm/init.sh ~/git/netgrubfm/boot/grubfm/
+sudo cp ~/git/grub2-filemanager/boot/grubfm/func.sh ~/git/netgrubfm/boot/grubfm/
 sudo cp ~/git/grub2-filemanager/build.sh ~/git/netgrubfm/
 echo done.
