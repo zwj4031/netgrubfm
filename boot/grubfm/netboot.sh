@@ -26,16 +26,39 @@ set netbootxyz=netboot.xyz.lkrn
 set chain=linux16
 set arch="legacy bios"
 fi;
+
+function netlinux {
+menuentry $"返回" --class go-previous {
+configfile $prefix/netboot.sh;
+}
+menuentry $"在线启动debian-10.4.0-gnome  [网易]" --class debian {
+set lang=en_US;
+set enable_progress_indicator=1;
+export url=mirrors.163.com;
+export isopath=/debian-cd/current-live/amd64/iso-hybrid/debian-live-10.4.0-amd64-gnome.iso
+export btpath=/debian-cd/current-live/amd64/bt-hybrid/debian-live-10.4.0-amd64-gnome.iso.torrent
+echo wait...................;
+loopback loop (http,$url)$isopath;
+linux (loop)/live/vmlinuz-4.19.0-9-amd64 boot=live config username=root vga=normal fetch=http://$url$isopath;
+initrd (loop)/live/initrd.img-4.19.0-9-amd64
+}
+
+menuentry $"在线安装linux                [netboot.xyz] " --class net {
+set lang=en_US; terminal_output console;
+echo wait...................;
+$chain (http,boot.netboot.xyz)/ipxe/$netbootxyz
+}
+
+}
+
 function plugin {
 menuentry $"返回" --class go-previous {
 configfile $prefix/netboot.sh;
 }
 
-
-menuentry $"在线安装linux         [已启用] " --class check {
-set lang=en_US; terminal_output console;
-echo wait...................;
-$chain (http,boot.netboot.xyz)/ipxe/$netbootxyz
+menuentry $"在线安装linux系统     [已启用] " --class check {
+clear_menu;
+netlinux;
 }
 menuentry $"在线重装win系统       [未安装] " --class cancel {
 set lang=en_US; terminal_output console;
@@ -69,7 +92,7 @@ fi;
 menuentry $"网络文件 [$arch]" --class netgrubfm {
  checklist;
 }
-menuentry $"插件中心" --class dir {
+menuentry $"插件中心" --class slax {
  clear_menu; plugin;
 }
 
