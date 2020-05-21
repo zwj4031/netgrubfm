@@ -1,3 +1,4 @@
+source ${prefix}/func.sh;
 default=1;
 timeout=5;
 
@@ -125,12 +126,13 @@ function check {
 
 if [ "$grub_platform" = "efi" ];
     then
+	     setupmenu;
 
 menuentry $"使用map加载到内存启动 " --class wim {
         terminal_output console;
         map --mem $grubfm_file;
 }
-        setupmenu;		
+      	
 
     elif [ "$grub_platform" = "pc" ];
 then

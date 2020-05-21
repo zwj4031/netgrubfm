@@ -1,5 +1,7 @@
 grubfmia32.efi
 grubfm.iso
+*netgrubfm.7z
+grub2-latest.tar.gz
 grubfmx64.efi
 /tftpboot
 /linux/initrd.xz

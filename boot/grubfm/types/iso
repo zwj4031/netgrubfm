@@ -1,7 +1,7 @@
 [type]
 icon = iso
 display = 1
-boot = net/iso.sh
+boot = net/netloop_test.sh
 
 [0]
 menu = iso/loop.sh
