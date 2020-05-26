@@ -135,6 +135,7 @@ lsmmap: mmap
 strtoull_test: functional_test
 bitmap:
 ntfs: fshelp
+tpm: verifiers
 gcry_crc: crypto
 efiload: extcmd
 png: bufio bitmap

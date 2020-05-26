@@ -47,6 +47,8 @@
 *kopenbsd: bsd
 *list_env: loadenv
 *load_env: loadenv
+*load_vt_param: ventoy
+*load_vt_persist: ventoy
 *loopback: loopback
 *ls: ls
 *lsacpi: lsacpi

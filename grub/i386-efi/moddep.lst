@@ -142,7 +142,7 @@ part_bsd: part_msdos
 shell: net extcmd efinet normal
 luks2: cryptodisk crypto json afsplitter pbkdf2
 cs5536:
-ventoy: crypto udf extcmd normal wimboot gcry_sha1 iso9660
+ventoy: crypto udf extcmd normal procfs wimboot gcry_sha1 iso9660
 gcry_sha512: crypto
 password: crypto normal
 fshelp:
@@ -172,6 +172,7 @@ bitmap:
 ntfs: fshelp
 multiboot: net linux video boot relocator mmap
 wimboot: map sbpolicy dp extcmd normal
+tpm: verifiers
 gcry_crc: crypto
 efiload: extcmd
 png: bufio bitmap
