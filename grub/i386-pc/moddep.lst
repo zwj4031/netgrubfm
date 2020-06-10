@@ -36,6 +36,7 @@ jfs:
 help: extcmd normal
 configfile: normal
 cbls: cbtable
+map: uuid extcmd boot relocator mmap
 gfxterm_menu: font functional_test procfs normal video_fb
 gcry_idea: crypto
 tr: extcmd
@@ -125,6 +126,7 @@ signature_test: functional_test procfs
 ata: scsi
 uuid: extcmd
 udf: fshelp
+ntboot: map extcmd procfs wimboot
 gzio: gcry_crc
 xnu_uuid: gcry_md5
 uhci: usb pci
@@ -139,12 +141,12 @@ part_bsd: part_msdos
 luks2: cryptodisk crypto json afsplitter pbkdf2
 cs5536: pci
 biosdisk:
-ventoy: crypto udf extcmd normal procfs wimboot relocator gcry_sha1 iso9660
+ventoy: map crypto udf extcmd normal procfs relocator gcry_sha1 iso9660
 lsapm:
 gcry_sha512: crypto
 password: crypto normal
-fshelp:
 efiemu: gcry_crc crypto smbios cpuid acpi
+fshelp:
 sleep_test: functional_test datetime
 iorw: extcmd
 xnu: macho bitmap_scale random verifiers extcmd video bitmap boot efiemu relocator mmap
@@ -159,8 +161,8 @@ part_dvh:
 ext2: fshelp
 blocklist: extcmd
 nes: extcmd video
+drivemap: map extcmd
 net: priority_queue bufio datetime boot
-drivemap: extcmd boot mmap
 part_acorn:
 videoinfo: extcmd video
 btrfs: zstd lzopio extcmd raid6rec gzio
@@ -170,7 +172,7 @@ bitmap:
 vbe: video video_fb
 ntfs: fshelp
 multiboot: net linux vbe video boot relocator mmap lsapm
-wimboot:
+wimboot: map
 gcry_crc: crypto
 png: bufio bitmap
 json:

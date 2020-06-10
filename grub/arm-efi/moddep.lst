@@ -31,6 +31,7 @@ gfxmenu: video_colors trig bitmap_scale gfxterm font normal video bitmap
 jfs:
 help: extcmd normal
 configfile: normal
+map: uuid dp extcmd normal boot
 gfxterm_menu: font functional_test procfs normal video_fb
 gcry_idea: crypto
 tr: extcmd
@@ -133,6 +134,7 @@ lsmmap: mmap
 strtoull_test: functional_test
 bitmap:
 ntfs: fshelp
+wimboot: map sbpolicy extcmd normal
 tpm: verifiers
 gcry_crc: crypto
 efiload: extcmd

@@ -54,10 +54,12 @@
 *lsacpi: lsacpi
 *lspci: lspci
 *lua: lua
+*map: map
 *md5sum: hashsum
 *menuentry: normal
 *mkinitrd: newc
 *nes: nes
+*ntboot: ntboot
 *ntversion: grubfm
 *partnew: partnew
 *pcidump: pcidump

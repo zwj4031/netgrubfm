@@ -49,6 +49,7 @@
 *ls: ls
 *lsacpi: lsacpi
 *lua: lua
+*map: map
 *md5sum: hashsum
 *menuentry: normal
 *mkinitrd: newc
@@ -86,7 +87,9 @@
 *trust: pgp
 *uuid4: uuid
 *verify_detached: pgp
+*vfat: wimboot
 *videomode: videoinfo
+*wimboot: wimboot
 *zfskey: zfscrypt
 .: configfile
 [: test
