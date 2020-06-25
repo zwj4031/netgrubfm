@@ -13,7 +13,6 @@
 *cryptomount: cryptodisk
 *date: date
 *dd: dd
-*disable_wpbt: acpi
 *dp: dp
 *echo: echo
 *efi_connect_all: efiload
@@ -88,8 +87,10 @@
 *uuid4: uuid
 *verify_detached: pgp
 *vfat: wimboot
+*vhd: vhd
 *videomode: videoinfo
 *wimboot: wimboot
+*wimtools: wimboot
 *zfskey: zfscrypt
 .: configfile
 [: test

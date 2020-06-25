@@ -103,6 +103,7 @@
 *verify_detached: pgp
 *vhd: vhd
 *videomode: videoinfo
+*wimtools: wimboot
 *xnu_splash: xnu
 *zfskey: zfscrypt
 .: configfile

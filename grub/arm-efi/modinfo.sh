@@ -14,9 +14,9 @@ grub_end_symbol=""
 
 # Build environment
 grub_target_cc='arm-linux-gnueabi-gcc'
-grub_target_cc_version='arm-linux-gnueabi-gcc (GCC) 9.2.0'
+grub_target_cc_version='arm-linux-gnueabi-gcc (Ubuntu/Linaro 7.5.0-3ubuntu1~18.04) 7.5.0'
 grub_target_cflags='-std=gnu99 -Os -Wall -W -Wshadow -Wpointer-arith -Wundef -Wchar-subscripts -Wcomment -Wdeprecated-declarations -Wdisabled-optimization -Wdiv-by-zero -Wfloat-equal -Wformat-extra-args -Wformat-security -Wformat-y2k -Wimplicit -Wimplicit-function-declaration -Wimplicit-int -Wmain -Wmissing-braces -Wmissing-format-attribute -Wmultichar -Wparentheses -Wreturn-type -Wsequence-point -Wshadow -Wsign-compare -Wswitch -Wtrigraphs -Wunknown-pragmas -Wunused -Wunused-function -Wunused-label -Wunused-parameter -Wunused-value  -Wunused-variable -Wwrite-strings -Wnested-externs -Wstrict-prototypes -g -Wredundant-decls -Wmissing-prototypes -Wmissing-declarations -Wcast-align  -Wextra -Wattributes -Wendif-labels -Winit-self -Wint-to-pointer-cast -Winvalid-pch -Wmissing-field-initializers -Wnonnull -Woverflow -Wvla -Wpointer-to-int-cast -Wstrict-aliasing -Wvariadic-macros -Wvolatile-register-var -Wpointer-sign -Wmissing-include-dirs -Wmissing-prototypes -Wmissing-declarations -Wformat=2 -freg-struct-return -fno-dwarf2-cfi-asm -fno-asynchronous-unwind-tables -fno-unwind-tables -fno-ident -mthumb-interwork -fno-stack-protector -mno-unaligned-access -Wtrampolines -Werror'
-grub_target_cppflags=' -Wall -W  -DGRUB_MACHINE_EFI=1 -DGRUB_MACHINE=ARM_EFI -mword-relocations -nostdinc -isystem /tmp/cross/gcc-9.2.0-nolibc/arm-linux-gnueabi/bin/../lib/gcc/arm-linux-gnueabi/9.2.0/include -I$(top_srcdir)/include -I$(top_builddir)/include'
+grub_target_cppflags=' -Wall -W  -DGRUB_MACHINE_EFI=1 -DGRUB_MACHINE=ARM_EFI -mword-relocations -nostdinc -isystem /usr/lib/gcc-cross/arm-linux-gnueabi/7/include -I$(top_srcdir)/include -I$(top_builddir)/include'
 grub_target_ccasflags=' -g '
 grub_target_ldflags=' -Wl,--build-id=none'
 grub_cflags=''

@@ -15,7 +15,6 @@
 *cryptomount: cryptodisk
 *date: date
 *dd: dd
-*disable_wpbt: acpi
 *dp: dp
 *echo: echo
 *efi_connect_all: efiload
@@ -110,6 +109,7 @@
 *vhd: vhd
 *videomode: videoinfo
 *wimboot: wimboot
+*wimtools: wimboot
 *xnu_splash: xnu
 *zfskey: zfscrypt
 .: configfile
