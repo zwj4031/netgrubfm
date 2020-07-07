@@ -105,7 +105,6 @@
 *uuid4: uuid
 *ventoy: ventoy
 *verify_detached: pgp
-*vfat: wimboot
 *vhd: vhd
 *videomode: videoinfo
 *wimboot: wimboot
@@ -239,7 +238,6 @@ play: play
 read: read
 read_file: read
 reboot: reboot
-regtool: libreg
 rename: fatfs
 reset: reboot
 return: normal

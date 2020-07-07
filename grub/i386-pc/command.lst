@@ -103,6 +103,7 @@
 *verify_detached: pgp
 *vhd: vhd
 *videomode: videoinfo
+*wimboot: wimboot
 *wimtools: wimboot
 *xnu_splash: xnu
 *zfskey: zfscrypt
@@ -222,7 +223,6 @@ pxechainloader: pxechain
 read: read
 read_file: read
 reboot: reboot
-regtool: libreg
 rename: fatfs
 reset: reboot
 return: normal

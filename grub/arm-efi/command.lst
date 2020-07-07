@@ -86,7 +86,6 @@
 *trust: pgp
 *uuid4: uuid
 *verify_detached: pgp
-*vfat: wimboot
 *vhd: vhd
 *videomode: videoinfo
 *wimboot: wimboot
@@ -178,7 +177,6 @@ password_pbkdf2: password_pbkdf2
 read: read
 read_file: read
 reboot: reboot
-regtool: libreg
 rename: fatfs
 reset: reboot
 return: normal

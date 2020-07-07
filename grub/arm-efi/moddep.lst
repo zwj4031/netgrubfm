@@ -134,7 +134,7 @@ lsmmap: mmap
 strtoull_test: functional_test
 bitmap:
 ntfs: fshelp
-wimboot: lua map sbpolicy extcmd normal
+wimboot: lua map sbpolicy extcmd normal procfs xzio
 tpm: verifiers
 gcry_crc: crypto
 efiload: extcmd
@@ -179,7 +179,6 @@ tga: bufio bitmap
 reboot:
 serial: extcmd terminfo
 zfscrypt: crypto pbkdf2 zfs extcmd gcry_sha1 gcry_rijndael
-libreg:
 dm_nv: diskfilter
 cmp_test: functional_test
 luks: cryptodisk crypto afsplitter pbkdf2

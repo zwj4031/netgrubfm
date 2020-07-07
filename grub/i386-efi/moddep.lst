@@ -125,9 +125,9 @@ nativedisk:
 minicmd:
 signature_test: functional_test procfs
 ata: scsi
+ntboot: map extcmd wimboot
 uuid: extcmd
 udf: fshelp
-ntboot: map extcmd procfs wimboot
 gzio: gcry_crc
 xnu_uuid: gcry_md5
 uhci: usb
@@ -171,7 +171,7 @@ strtoull_test: functional_test
 bitmap:
 ntfs: fshelp
 multiboot: net linux video boot relocator mmap
-wimboot: lua map sbpolicy extcmd normal
+wimboot: lua map sbpolicy extcmd normal procfs xzio
 tpm: verifiers
 gcry_crc: crypto
 efiload: extcmd
@@ -223,7 +223,6 @@ tga: bufio bitmap
 reboot:
 serial: extcmd terminfo
 zfscrypt: crypto pbkdf2 zfs extcmd gcry_sha1 gcry_rijndael
-libreg:
 usb_gamepad: usb
 efi_uga: video video_fb
 dm_nv: diskfilter

@@ -60,6 +60,10 @@ function iso_detect {
     export src=win;
     return;
   fi;
+  if [ -z "${grubfm_startpebat}" -o ! -f "${grubfm_startpebat}" ];
+  then
+    set grubfm_startpebat="(install)/silent.bat";
+  fi;
   lua ${prefix}/rules/iso/winpe.lua;
   if [ ${wim_count} -ge 1 ];
   then
@@ -408,4 +412,8 @@ then
     loopback loop "${grubfm_file}";
     configfile ${prefix}/distro/${src}.sh;
   }
+  if [ "${src}" = "win" ];
+  then
+    source ${prefix}/rules/iso/buildpe.sh;
+  fi;
 fi;

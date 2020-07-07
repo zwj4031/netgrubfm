@@ -198,7 +198,6 @@ tga: bitmap
 reboot: relocator
 serial: extcmd terminfo
 zfscrypt: crypto pbkdf2 zfs extcmd gcry_sha1 gcry_rijndael
-libreg:
 usb_gamepad: usb
 dm_nv: diskfilter
 cmp_test: functional_test
