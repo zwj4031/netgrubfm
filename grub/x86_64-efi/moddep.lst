@@ -142,7 +142,7 @@ part_bsd: part_msdos
 shell: net extcmd efinet normal
 luks2: cryptodisk crypto json afsplitter pbkdf2
 cs5536:
-ventoy: map crypto udf extcmd normal procfs gcry_sha1 iso9660
+ventoy: map crypto udf extcmd normal procfs wimboot gcry_sha1 iso9660
 gcry_sha512: crypto
 password: crypto normal
 fshelp:

@@ -38,6 +38,7 @@ tr: extcmd
 shift_test: functional_test
 afs: fshelp
 search_part_label: gpt
+crscreenshot:
 xzio: crypto
 syslinuxcfg: extcmd normal
 search_fs_file:
