@@ -108,6 +108,7 @@ do
 done
 cp arch/x64/*.efi build/boot/grubfm
 cp arch/x64/*.gz build/boot/grubfm
+cp arch/x64/*.xz build/boot/grubfm
 #cp arch/x64-pxe/*.* build/boot/grubfm/
 cp arch/x64-pxe/wimboot build/boot/grubfm/
 cp arch/legacy-pxe/tool.gz build/boot/grubfm/
@@ -117,6 +118,7 @@ cd ..
 rm -r build/boot/grubfm/x86_64-efi
 rm build/boot/grubfm/*.efi
 rm build/boot/grubfm/*.gz
+rm build/boot/grubfm/*.xz
 modules=$(cat arch/x64/builtin.lst)
 grub-mkimage -m ./build/memdisk.cpio -d ./grub/x86_64-efi -p "(memdisk)/boot/grubfm" -c arch/x64/config.cfg -o grubfmx64.efi -O x86_64-efi $modules
 
@@ -129,12 +131,14 @@ do
 done
 cp arch/ia32/*.efi build/boot/grubfm
 cp arch/ia32/*.gz build/boot/grubfm
+cp arch/ia32/*.xz build/boot/grubfm
 cd build
 find ./boot | cpio -o -H newc > ./memdisk.cpio
 cd ..
 rm -r build/boot/grubfm/i386-efi
 rm build/boot/grubfm/*.efi
 rm build/boot/grubfm/*.gz
+rm build/boot/grubfm/*.xz
 modules=$(cat arch/ia32/builtin.lst)
 grub-mkimage -m ./build/memdisk.cpio -d ./grub/i386-efi -p "(memdisk)/boot/grubfm" -c arch/ia32/config.cfg -o grubfmia32.efi -O i386-efi $modules
 rm build/memdisk.cpio
@@ -161,6 +165,7 @@ cp arch/legacy/duet64.iso build/boot/grubfm/
 cp arch/legacy/memdisk build/boot/grubfm/
 cp arch/legacy/ipxe.lkrn build/boot/grubfm/
 cp arch/legacy/*.gz build/boot/grubfm/
+cp arch/legacy/*.xz build/boot/grubfm/
 cp arch/legacy-pxe/tool.gz build/boot/grubfm/
 cd build
 find ./boot | cpio -o -H newc | gzip -9 > ./fm.loop
@@ -177,8 +182,8 @@ cp -r arch/legacy/ntboot/* build/
 $geniso -R -hide-joliet boot.catalog -b fmldr -no-emul-boot -allow-lowercase -boot-load-size 4 -boot-info-table -o grubfm.iso build
 #netboot start
 #grub-mkimage -d ./grub/i386-pc -c ./arch/legacy-pxe/pxefm.cfg -o pxefm -O i386-pc-pxe -prefix="(pxe)" pxe tftp newc http net efiemu biosdisk boot cat chain configfile cpio echo extcmd fat font gzio halt help iso9660 linux linux16 loopback ls lua lzopio memdisk minicmd newc normal ntfs ntldr part_gpt part_msdos search sleep tar test udf xzio
-grub-mkimage -d ./grub/i386-pc -c ./arch/legacy-pxe/pxefm.0.cfg -o pxefm.0 -O i386-pc-pxe -prefix="(pxe)" pxe tftp newc http net efiemu biosdisk boot cat chain configfile cpio echo extcmd fat font gzio halt help iso9660 linux linux16 loopback ls lua lzopio memdisk minicmd newc normal ntfs ntldr part_gpt part_msdos search sleep tar test udf xzio
-grub-mkimage -d ./grub/i386-pc -c ./arch/legacy-pxe/httpfm.cfg -o httpfm -O i386-pc-pxe -prefix="(http)" pxe tftp newc http net efiemu biosdisk boot cat chain configfile cpio echo extcmd fat font gzio halt help iso9660 linux linux16 loopback ls lua lzopio memdisk minicmd newc normal ntfs ntldr part_gpt part_msdos search sleep tar test udf xzio
+grub-mkimage -d ./grub/i386-pc -c ./arch/legacy-pxe/pxefm.0.cfg -o pxefm.0 -O i386-pc-pxe -prefix="(pxe)" pxe tftp newc http net efiemu biosdisk boot cat chain configfile cpio echo extcmd fat font gzio halt help iso9660 linux linux16 loopback ls lua lzopio memdisk minicmd newc normal ntfs ntldr part_gpt part_msdos search sleep tar test udf xzio wimboot
+grub-mkimage -d ./grub/i386-pc -c ./arch/legacy-pxe/httpfm.cfg -o httpfm -O i386-pc-pxe -prefix="(http)" pxe tftp newc http net efiemu biosdisk boot cat chain configfile cpio echo extcmd fat font gzio halt help iso9660 linux linux16 loopback ls lua lzopio memdisk minicmd newc normal ntfs ntldr part_gpt part_msdos search sleep tar test udf xzio wimboot
 cp pxefm.0 ./tftpboot/app/netgrubfm/pxefm
 mv pxefm.0 ./tftpboot/app/netgrubfm/netgrubfm.pcbios
 mv grubfmx64.efi ./tftpboot/app/netgrubfm/netgrubfm.efi
