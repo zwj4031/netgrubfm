@@ -1,4 +1,5 @@
 source ${prefix}/func.sh;
+export enable_progress_indicator=1;
 
   loopback -d loop;
   loopback loop "${grubfm_file}";
@@ -11,3 +12,4 @@ source ${prefix}/func.sh;
 
   source ${prefix}/rules/net/netloop_detect.sh;
   loopback -d loop;
+export enable_progress_indicator=0;
