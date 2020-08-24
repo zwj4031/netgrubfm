@@ -14,7 +14,7 @@ romfs: fshelp
 read: normal
 aout:
 gcry_arcfour: crypto
-tftp: net priority_queue
+tftp: net
 newc: extcmd archelp
 minix2_be:
 afsplitter: crypto

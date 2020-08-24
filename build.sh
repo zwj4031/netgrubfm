@@ -62,6 +62,8 @@ echo "10. Polish"
 echo "11. Ukrainian"
 echo "12. French"
 echo "13. Danish"
+echo "14. Portuguese (Brazil)"
+echo "15. Arabic"
 read -p "Please make a choice: " choice
 case "$choice" in
     2)
@@ -111,6 +113,14 @@ case "$choice" in
         echo "da_DK"
         cp lang/da_DK/lang.sh build/boot/grubfm/
         ;;
+    14)
+        echo "pt_BR"
+        cp lang/pt_BR/lang.sh build/boot/grubfm/
+        ;;
+    15)
+        echo "ar_SA"
+        cp lang/ar_SA/lang.sh build/boot/grubfm/
+        ;;
     *)
         echo "zh_CN"
         cp lang/zh_CN/lang.sh build/boot/grubfm/
@@ -134,6 +144,7 @@ rm -r build/boot/grubfm/x86_64-efi
 rm build/boot/grubfm/*.xz
 modules=$(cat arch/x64/builtin.lst)
 grub-mkimage -m ./build/memdisk.cpio -d ./grub/x86_64-efi -p "(memdisk)/boot/grubfm" -c arch/x64/config.cfg -o grubfmx64.efi -O x86_64-efi $modules
+rm build/memdisk.cpio
 
 echo "i386-efi"
 mkdir build/boot/grubfm/i386-efi
@@ -152,6 +163,25 @@ rm -r build/boot/grubfm/i386-efi
 rm build/boot/grubfm/*.xz
 modules=$(cat arch/ia32/builtin.lst)
 grub-mkimage -m ./build/memdisk.cpio -d ./grub/i386-efi -p "(memdisk)/boot/grubfm" -c arch/ia32/config.cfg -o grubfmia32.efi -O i386-efi $modules
+rm build/memdisk.cpio
+
+echo "arm64-efi"
+mkdir build/boot/grubfm/arm64-efi
+for modules in $(cat arch/aa64/optional.lst)
+do
+    echo "copying ${modules}.mod"
+    cp grub/arm64-efi/${modules}.mod build/boot/grubfm/arm64-efi/
+done
+# cp arch/aa64/*.efi build/boot/grubfm
+cp arch/aa64/*.xz build/boot/grubfm
+cd build
+find ./boot | cpio -o -H newc > ./memdisk.cpio
+cd ..
+rm -r build/boot/grubfm/arm64-efi
+# rm build/boot/grubfm/*.efi
+rm build/boot/grubfm/*.xz
+modules=$(cat arch/aa64/builtin.lst)
+grub-mkimage -m ./build/memdisk.cpio -d ./grub/arm64-efi -p "(memdisk)/boot/grubfm" -c arch/aa64/config.cfg -o grubfmaa64.efi -O arm64-efi $modules
 rm build/memdisk.cpio
 
 echo "i386-pc"

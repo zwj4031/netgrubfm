@@ -41,6 +41,7 @@
 *hiddenentry: normal
 *html_list: grubfm
 *ini_get: ini
+*isotools: map
 *keystatus: keystatus
 *list_env: loadenv
 *load_env: loadenv

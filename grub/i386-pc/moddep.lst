@@ -15,7 +15,7 @@ read: normal
 gcry_arcfour: crypto
 aout:
 vga_text:
-tftp: net priority_queue
+tftp: net
 newc: extcmd archelp
 minix2_be:
 afsplitter: crypto

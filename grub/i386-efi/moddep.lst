@@ -15,7 +15,7 @@ lsefimmap:
 read: normal
 gcry_arcfour: crypto
 aout:
-tftp: net priority_queue
+tftp: net
 newc: extcmd archelp
 minix2_be:
 afsplitter: crypto
@@ -205,7 +205,7 @@ loadenv: disk extcmd
 bitmap_scale: bitmap
 probe: extcmd
 minix3:
-dp: net lua extcmd efinet normal
+dp: net lua extcmd efinet
 tar: archelp
 loadbios:
 hfs: fshelp

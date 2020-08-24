@@ -18,35 +18,39 @@ set pager=0;
 cat --set=modlist ${prefix}/insmod.lst;
 for module in ${modlist};
 do
-    insmod ${module};
+  insmod ${module};
 done;
 export enable_progress_indicator=0;
 export grub_secureboot="Not available";
 if [ "${grub_platform}" = "efi" ];
 then
-    search -s -f -q /efi/microsoft/boot/bootmgfw.efi;
-    if [ "${grub_cpu}" = "i386" ];
-    then
-        search -s -f -q /efi/boot/bootia32.efi;
-    else
-        search -s -f -q /efi/boot/bootx64.efi;
-    fi;
-    getenv -t uint8 SecureBoot grub_secureboot;
-    if [ "${grub_secureboot}" = "1" ];
-    then
-        export grub_secureboot="Enabled";
-        sbpolicy -i;
-        fucksb -i;
-        fucksb --off;
-    fi;
-    if [ "${grub_secureboot}" = "0" ];
-    then
-        export grub_secureboot="Disabled";
-    fi;
-    # enable mouse/touchpad
-    # terminal_input --append mouse;
+  search -s -f -q /efi/microsoft/boot/bootmgfw.efi;
+  if [ "${grub_cpu}" = "i386" ];
+  then
+    set EFI_ARCH="ia32";
+  elif [ "${grub_cpu}" = "arm64" ];
+  then
+    set EFI_ARCH="aa64";
+  else
+    set EFI_ARCH="x64";
+  fi;
+  search -s -f -q /efi/boot/boot${EFI_ARCH}.efi;
+  getenv -t uint8 SecureBoot grub_secureboot;
+  if [ "${grub_secureboot}" = "1" ];
+  then
+    export grub_secureboot="Enabled";
+    sbpolicy -i;
+    fucksb -i;
+    fucksb --off;
+  fi;
+  if [ "${grub_secureboot}" = "0" ];
+  then
+    export grub_secureboot="Disabled";
+  fi;
+  # enable mouse/touchpad
+  # terminal_input --append mouse;
 else
-    search -s -f -q /fmldr;
+  search -s -f -q /fmldr;
 fi;
 
 if cpuid -l;
@@ -71,6 +75,21 @@ terminal_output gfxterm;
 set color_normal=white/black;
 set color_highlight=black/white;
 
+search --set=aioboot -f -q -n /AIO/grub/grub.cfg;
+search --set=ventoy -f -q -n /ventoy/ventoy.cpio;
+if [ -n "${aioboot}" ];
+then
+  dd --if=${prefix}/themes/slack/dock/aioboot.png \
+     --of=${prefix}/themes/slack/dock/f5.png --bs=512;
+elif [ -n "${ventoy}" ];
+then
+  dd --if=${prefix}/themes/slack/dock/ventoy.png \
+     --of=${prefix}/themes/slack/dock/f5.png --bs=512;
+else
+  dd --if=${prefix}/themes/slack/dock/net.png \
+     --of=${prefix}/themes/slack/dock/f5.png --bs=512;
+fi;
+
 export theme_std=${prefix}/themes/slack/theme.txt;
 export theme_fm=${prefix}/themes/slack/fm.txt;
 export theme_help=${prefix}/themes/slack/help.txt;
@@ -86,8 +105,11 @@ then
 fi;
 
 export grubfm_lang="${lang}";
-source ${prefix}/pxeinit.sh;
-net_detect;
+
+if [ -z "${aioboot}" -a -z "${ventoy}" ];
+  source ${prefix}/pxeinit.sh;
+  net_detect;
+fi;
 if [ "${grub_netboot}" = "1" ];
 then
   configfile ${prefix}/netboot.sh;
