@@ -101,7 +101,7 @@ esac
 
 echo "x86_64-efi"
 mkdir build/boot/grubfm/x86_64-efi
-for modules in $(cat arch/x64/optional.lst)
+for modules in $(cat arch/x64-pxe/optional.lst)
 do
     echo "copying ${modules}.mod"
     cp grub/x86_64-efi/${modules}.mod build/boot/grubfm/x86_64-efi/
@@ -119,8 +119,8 @@ rm -r build/boot/grubfm/x86_64-efi
 rm build/boot/grubfm/*.efi
 rm build/boot/grubfm/*.gz
 rm build/boot/grubfm/*.xz
-modules=$(cat arch/x64/builtin.lst)
-grub-mkimage -m ./build/memdisk.cpio -d ./grub/x86_64-efi -p "(memdisk)/boot/grubfm" -c arch/x64/config.cfg -o grubfmx64.efi -O x86_64-efi $modules
+modules=$(cat arch/x64-pxe/builtin.lst)
+grub-mkimage -m ./build/memdisk.cpio -d ./grub/x86_64-efi -p "(memdisk)/boot/grubfm" -c arch/x64-pxe/config.cfg -o grubfmx64.efi -O x86_64-efi $modules
 
 echo "i386-efi"
 mkdir build/boot/grubfm/i386-efi
