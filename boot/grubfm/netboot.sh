@@ -89,8 +89,17 @@ netboot; grubfm_set --boot 1; clear_menu; html_list (http)/;
 fi;
 }
 
+function checkconfig {
+stat -z (pxe)/app/config/netboot;
+if [ "$?" = "0" ]
+then 
+source (pxe)/app/config/netboot;
+fi;
+}
+
+
 menuentry $"网络文件 [$arch]" --class netgrubfm {
- checklist;
+ checkconfig; checklist;
 }
 menuentry $"插件中心" --class slax {
  clear_menu; plugin;
