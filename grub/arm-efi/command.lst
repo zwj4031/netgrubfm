@@ -9,6 +9,7 @@
 *cat: cat
 *chainloader: chain
 *clear_menu: normal
+*cmp: cmp
 *crc: hashsum
 *cryptomount: cryptodisk
 *date: date
@@ -94,6 +95,7 @@
 *zfskey: zfscrypt
 .: configfile
 [: test
+alias: alias
 authenticate: normal
 background_color: gfxterm_background
 badram: mmap
@@ -104,7 +106,6 @@ btrfs-mount-subvol: btrfs
 cat: minicmd
 checktime: date
 clear: normal
-cmp: cmp
 commandline: commandline
 configfile: configfile
 continue: normal
@@ -200,6 +201,7 @@ time: time
 touch: fatfs
 true: true
 umount: fatfs
+unalias: alias
 version: version
 videoinfo: videoinfo
 videotest: videotest

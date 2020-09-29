@@ -71,7 +71,7 @@ mdraid09_be: diskfilter
 gettext:
 gcry_sha1: crypto
 hfspluscomp: gzio hfsplus
-cmp:
+cmp: extcmd
 offsetio:
 file: macho elf extcmd offsetio
 video_colors:
@@ -108,6 +108,7 @@ xnu_uuid: gcry_md5
 mul_test: functional_test
 adler32: crypto
 terminal:
+shim_lock: verifiers
 crypto:
 part_bsd: part_msdos
 luks2: cryptodisk crypto json afsplitter pbkdf2
@@ -197,6 +198,7 @@ fixmmap: normal
 hfsplus: fshelp
 gcry_cast5: crypto
 commandline: normal
+alias:
 extcmd:
 squash4: fshelp lzopio xzio gzio
 part_plan:

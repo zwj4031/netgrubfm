@@ -81,7 +81,7 @@ mdraid09_be: diskfilter
 gettext:
 gcry_sha1: crypto
 hfspluscomp: gzio hfsplus
-cmp:
+cmp: extcmd
 random: hexdump
 offsetio:
 file: macho elf extcmd offsetio
@@ -243,6 +243,7 @@ fixmmap: normal
 hfsplus: fshelp
 gcry_cast5: crypto
 commandline: normal
+alias:
 extcmd:
 squash4: fshelp lzopio xzio gzio
 part_plan:

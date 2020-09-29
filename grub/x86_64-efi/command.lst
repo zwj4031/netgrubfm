@@ -9,6 +9,7 @@
 *cat: cat
 *chainloader: chain
 *clear_menu: normal
+*cmp: cmp
 *cpuid: cpuid
 *crc: hashsum
 *cryptomount: cryptodisk
@@ -113,6 +114,7 @@
 *zfskey: zfscrypt
 .: configfile
 [: test
+alias: alias
 appleloader: appleldr
 authenticate: normal
 background_color: gfxterm_background
@@ -126,7 +128,6 @@ cat: minicmd
 cbmemc: cbmemc
 checktime: date
 clear: normal
-cmp: cmp
 commandline: commandline
 configfile: configfile
 continue: normal
@@ -260,6 +261,7 @@ time: time
 touch: fatfs
 true: true
 umount: fatfs
+unalias: alias
 usb: usbtest
 version: version
 videoinfo: videoinfo
