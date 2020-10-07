@@ -171,7 +171,7 @@ strtoull_test: functional_test
 bitmap:
 ntfs: fshelp
 multiboot: net linux video boot relocator mmap
-wimboot: lua map sbpolicy extcmd normal procfs xzio
+wimboot: lua map extcmd normal procfs xzio
 tpm: verifiers
 gcry_crc: crypto
 efiload: extcmd

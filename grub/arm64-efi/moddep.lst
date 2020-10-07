@@ -138,7 +138,7 @@ lsmmap: mmap
 strtoull_test: functional_test
 bitmap:
 ntfs: fshelp
-wimboot: lua map sbpolicy extcmd normal procfs xzio
+wimboot: lua map extcmd normal procfs xzio
 tpm: verifiers
 gcry_crc: crypto
 efiload: extcmd
