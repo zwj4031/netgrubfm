@@ -5,7 +5,7 @@ setkey: extcmd
 macho:
 ini: lua extcmd
 gcry_des: crypto
-memrw: lua extcmd
+memrw: lua extcmd relocator
 terminfo: extcmd
 f2fs: fshelp
 part_gpt:
@@ -56,7 +56,7 @@ affs: fshelp
 iso9660: fshelp
 gptprio: gpt extcmd
 exfat: fshelp
-smbios: extcmd
+smbios: extcmd procfs
 setjmp_test: functional_test setjmp
 disk:
 xfs: fshelp
@@ -129,11 +129,9 @@ luks2: cryptodisk crypto json afsplitter pbkdf2
 cs5536: pci
 gcry_sha512: crypto
 password: crypto normal
-efiemu: gcry_crc crypto smbios cpuid acpi
 fshelp:
 sleep_test: functional_test datetime
 iorw: extcmd
-xnu: macho bitmap_scale random verifiers extcmd bitmap boot efiemu relocator mmap
 mmap:
 exfctest: functional_test
 zfsinfo: zfs
@@ -171,6 +169,7 @@ ufs1_be:
 getkey: lua extcmd read
 archelp:
 fdlibm:
+nttools:
 http: net
 zfs: gzio
 search_part_uuid: gpt
@@ -211,6 +210,7 @@ crc: btrfs
 sortlib:
 pci:
 cbmemc: normal terminfo
+ps2mouse: keylayouts boot
 cmosdump:
 hfsplus: fshelp
 gcry_cast5: crypto

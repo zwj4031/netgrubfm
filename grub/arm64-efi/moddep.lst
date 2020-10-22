@@ -51,7 +51,8 @@ affs: fshelp
 iso9660: fshelp
 gptprio: gpt extcmd
 exfat: fshelp
-smbios: extcmd
+bcfg: net efinet
+smbios: extcmd procfs
 setjmp_test: functional_test setjmp
 efi_netfs: net
 gfxterm: font video
@@ -88,8 +89,8 @@ geli: cryptodisk crypto gcry_sha512 pbkdf2 gcry_sha256
 cmdline_cat_test: font functional_test procfs normal video_fb
 part_sun:
 pbkdf2_test: functional_test pbkdf2 gcry_sha1
-verifiers:
 sbpolicy: extcmd
+verifiers:
 bufio:
 lua: setjmp extcmd datetime normal mmap
 blscfg: extcmd normal
@@ -157,6 +158,7 @@ fb:
 ufs1_be:
 getkey: lua extcmd read
 archelp:
+nttools:
 grubfm: conv sortlib font extcmd normal video gfxmenu ini
 http: net
 zfs: gzio
@@ -180,7 +182,7 @@ kernel:
 vhd: extcmd
 acpi: extcmd procfs video mmap
 tga: bufio bitmap
-reboot:
+reboot: extcmd
 serial: extcmd terminfo
 zfscrypt: crypto pbkdf2 zfs extcmd gcry_sha1 gcry_rijndael
 dm_nv: diskfilter
@@ -191,7 +193,6 @@ font: bufio video
 raid5rec: diskfilter
 crc64: crypto
 datetime:
-efifwsetup:
 ctz_test: functional_test
 video:
 crc: btrfs

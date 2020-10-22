@@ -60,7 +60,8 @@ affs: fshelp
 iso9660: fshelp
 gptprio: gpt extcmd
 exfat: fshelp
-smbios: extcmd
+bcfg: net efinet
+smbios: extcmd procfs
 setjmp_test: functional_test setjmp
 efi_netfs: net
 gfxterm: font video
@@ -105,8 +106,8 @@ part_sun:
 cbtable:
 pbkdf2_test: functional_test pbkdf2 gcry_sha1
 video_bochs: video video_fb
-verifiers:
 sbpolicy: extcmd
+verifiers:
 bufio:
 usbserial_ftdi: serial usb usbserial_common
 legacy_password_test: functional_test legacycfg
@@ -143,14 +144,12 @@ part_bsd: part_msdos
 shell: net extcmd efinet normal
 luks2: cryptodisk crypto json afsplitter pbkdf2
 cs5536:
-ventoy: map crypto udf extcmd normal procfs wimboot gcry_sha1 iso9660
 gcry_sha512: crypto
 password: crypto normal
 fshelp:
 sleep_test: functional_test datetime
 setenv: extcmd
 iorw: extcmd
-xnu: macho bitmap_scale random verifiers extcmd video bitmap boot relocator mmap
 tetris: extcmd
 mmap:
 getargs: extcmd
@@ -193,6 +192,7 @@ ufs1_be:
 getkey: lua extcmd read
 fdlibm:
 archelp:
+nttools:
 grubfm: conv sortlib font extcmd normal video gfxmenu ini
 http: net
 zfs: gzio
@@ -221,7 +221,7 @@ relocator: mmap
 linuxefi: linux boot
 acpi: extcmd procfs video mmap
 tga: bufio bitmap
-reboot:
+reboot: extcmd
 serial: extcmd terminfo
 zfscrypt: crypto pbkdf2 zfs extcmd gcry_sha1 gcry_rijndael
 usb_gamepad: usb
@@ -234,12 +234,12 @@ font: bufio video
 raid5rec: diskfilter
 crc64: crypto
 datetime:
-efifwsetup:
 ctz_test: functional_test
 video:
 crc: btrfs
 sortlib:
 cbmemc: normal cbtable terminfo
+ps2mouse: keylayouts boot
 fixmmap: normal
 hfsplus: fshelp
 gcry_cast5: crypto

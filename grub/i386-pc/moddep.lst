@@ -5,7 +5,7 @@ setkey: extcmd
 macho:
 ini: lua extcmd
 gcry_des: crypto
-memrw: lua extcmd
+memrw: lua extcmd relocator
 terminfo: extcmd
 f2fs: fshelp
 part_gpt:
@@ -59,7 +59,7 @@ affs: fshelp
 iso9660: fshelp
 gptprio: gpt extcmd
 exfat: fshelp
-smbios: extcmd acpi
+smbios: extcmd procfs acpi
 setjmp_test: functional_test setjmp
 gfxterm: font video
 disk:
@@ -141,15 +141,12 @@ part_bsd: part_msdos
 luks2: cryptodisk crypto json afsplitter pbkdf2
 cs5536: pci
 biosdisk:
-ventoy: map crypto udf extcmd normal procfs wimboot relocator gcry_sha1 iso9660
 lsapm:
 gcry_sha512: crypto
 password: crypto normal
-efiemu: gcry_crc crypto smbios cpuid acpi
 fshelp:
 sleep_test: functional_test datetime
 iorw: extcmd
-xnu: macho bitmap_scale random verifiers extcmd video bitmap boot efiemu relocator mmap
 tetris: extcmd
 mmap: boot
 exfctest: functional_test
@@ -192,6 +189,7 @@ truecrypt: video boot relocator mmap gzio
 getkey: lua extcmd read
 archelp:
 fdlibm:
+nttools:
 grubfm: conv sortlib font extcmd normal video gfxmenu ini
 ntldr: chain video boot relocator
 http: net
@@ -236,6 +234,7 @@ crc: btrfs
 sortlib:
 pci:
 cbmemc: normal cbtable terminfo
+ps2mouse: keylayouts boot
 cmosdump:
 hfsplus: fshelp
 gcry_cast5: crypto

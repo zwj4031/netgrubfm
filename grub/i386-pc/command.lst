@@ -48,8 +48,7 @@
 *kopenbsd: bsd
 *list_env: loadenv
 *load_env: loadenv
-*load_vt_param: ventoy
-*load_vt_persist: ventoy
+*loadfile: memrw
 *loopback: loopback
 *ls: ls
 *lsacpi: lsacpi
@@ -61,7 +60,6 @@
 *mkinitrd: newc
 *nes: nes
 *ntboot: ntboot
-*ntversion: grubfm
 *partnew: partnew
 *pcidump: pcidump
 *plan9: plan9
@@ -100,13 +98,11 @@
 *vboot16: vboot
 *vboot: vboot
 *vbootinsmod: vboot
-*ventoy: ventoy
 *verify_detached: pgp
 *vhd: vhd
 *videomode: videoinfo
 *wimboot: wimboot
 *wimtools: wimboot
-*xnu_splash: xnu
 *zfskey: zfscrypt
 .: configfile
 [: test
@@ -138,9 +134,6 @@ cutmem: mmap
 decrement: increment
 distrust: pgp
 dump: minicmd
-efiemu_loadcore: efiemu
-efiemu_prepare: efiemu
-efiemu_unload: efiemu
 eval: eval
 exit: minicmd
 export: normal
@@ -190,6 +183,7 @@ mkdir: fatfs
 module2: multiboot2
 module: multiboot
 mount: fatfs
+mousectl: ps2mouse
 multiboot2: multiboot2
 multiboot: multiboot
 mv: fatfs
@@ -212,7 +206,9 @@ net_ls_routes: net
 net_nslookup: net
 normal: normal
 normal_exit: normal
+nthibr: nttools
 ntldr: ntldr
+ntversion: nttools
 outb: iorw
 outl: iorw
 outw: iorw
@@ -260,14 +256,6 @@ write_dword: memrw
 write_file: fatfs
 write_word: memrw
 wrmsr: wrmsr
-xnu_devprop_load: xnu
-xnu_kernel64: xnu
-xnu_kernel: xnu
-xnu_kext: xnu
-xnu_kextdir: xnu
-xnu_mkext: xnu
-xnu_ramdisk: xnu
-xnu_resume: xnu
 xnu_uuid: xnu_uuid
 zfs-bootfs: zfsinfo
 zfsinfo: zfsinfo

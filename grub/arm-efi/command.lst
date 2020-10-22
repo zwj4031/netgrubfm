@@ -18,6 +18,7 @@
 *echo: echo
 *efi_connect_all: efiload
 *efiload: efiload
+*efiusb: dp
 *expr: expr
 *extract_syslinux_entries_configfile: syslinuxcfg
 *extract_syslinux_entries_source: syslinuxcfg
@@ -46,6 +47,7 @@
 *keystatus: keystatus
 *list_env: loadenv
 *load_env: loadenv
+*loadfile: memrw
 *loopback: loopback
 *ls: ls
 *lsacpi: lsacpi
@@ -55,7 +57,6 @@
 *menuentry: normal
 *mkinitrd: newc
 *nes: nes
-*ntversion: grubfm
 *partnew: partnew
 *pop_env: normal
 *probe: probe
@@ -64,6 +65,7 @@
 *read_dword: memrw
 *read_word: memrw
 *regexp: regexp
+*reset: reboot
 *save_env: loadenv
 *sbpolicy: sbpolicy
 *search: search
@@ -99,6 +101,7 @@ alias: alias
 authenticate: normal
 background_color: gfxterm_background
 badram: mmap
+bcfg: bcfg
 boot: boot
 break: normal
 btrfs-info: btrfs
@@ -125,7 +128,7 @@ extract_entries_configfile: configfile
 extract_entries_source: configfile
 false: true
 fixmmap: fixmmap
-fwsetup: efifwsetup
+fwsetup: reboot
 gptrepair: gptrepair
 gptsync: gptsync
 halt: halt
@@ -173,6 +176,8 @@ net_ls_routes: net
 net_nslookup: net
 normal: normal
 normal_exit: normal
+nthibr: nttools
+ntversion: nttools
 parttool: parttool
 password: password
 password_pbkdf2: password_pbkdf2
@@ -180,7 +185,6 @@ read: read
 read_file: read
 reboot: reboot
 rename: fatfs
-reset: reboot
 return: normal
 rm: fatfs
 rmmod: minicmd
