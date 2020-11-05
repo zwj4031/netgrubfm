@@ -90,7 +90,7 @@
 *trust: pgp
 *uuid4: uuid
 *verify_detached: pgp
-*vhd: vhd
+*vhd: loopback
 *videomode: videoinfo
 *wimboot: wimboot
 *wimtools: wimboot

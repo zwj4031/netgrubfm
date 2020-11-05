@@ -215,7 +215,7 @@ boot:
 keylayouts:
 progress: normal
 kernel:
-vhd: extcmd
+vhd:
 usbtest: usb
 relocator: mmap
 linuxefi: linux boot

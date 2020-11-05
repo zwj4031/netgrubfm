@@ -99,7 +99,7 @@
 *vboot: vboot
 *vbootinsmod: vboot
 *verify_detached: pgp
-*vhd: vhd
+*vhd: loopback
 *videomode: videoinfo
 *wimboot: wimboot
 *wimtools: wimboot

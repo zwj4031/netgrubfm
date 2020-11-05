@@ -179,7 +179,7 @@ procfs: archelp
 boot:
 progress: normal
 kernel:
-vhd: extcmd
+vhd:
 acpi: extcmd procfs video mmap
 tga: bufio bitmap
 reboot: extcmd

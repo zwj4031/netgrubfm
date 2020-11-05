@@ -211,7 +211,7 @@ boot:
 keylayouts:
 progress: normal
 kernel:
-vhd: extcmd
+vhd:
 usbtest: usb
 relocator: mmap
 acpi: extcmd procfs mmap
